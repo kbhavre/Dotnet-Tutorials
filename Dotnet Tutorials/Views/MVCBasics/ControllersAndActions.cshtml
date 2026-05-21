@@ -1,0 +1,298 @@
+﻿<h1>Controllers and Action Methods in ASP.NET Core MVC</h1>
+
+<p>
+    A Controller is a component in MVC that handles incoming HTTP requests,
+    processes application logic, and returns a response.
+</p>
+
+<p>
+    It acts as a bridge between the Model and the View.
+</p>
+
+<hr />
+
+<h2>What is a Controller?</h2>
+
+<p>
+    A Controller is responsible for:
+</p>
+
+<ul>
+    <li>Handling HTTP requests</li>
+    <li>Processing business logic</li>
+    <li>Returning responses</li>
+</ul>
+
+<p>
+    Responses can be:
+</p>
+
+<ul>
+    <li>View</li>
+    <li>JSON</li>
+    <li>Plain Text</li>
+    <li>Redirect</li>
+</ul>
+
+<hr />
+
+<h2>Controller Basics</h2>
+
+<p>
+    A controller is simply a class that:
+</p>
+
+<ul>
+    <li>Inherits from <strong>Controller</strong></li>
+    <li>Ends with the word <strong>Controller</strong></li>
+</ul>
+
+<h3>Example</h3>
+
+<pre>
+<code>
+public class StudentController : Controller
+{
+
+}
+</code>
+</pre>
+
+<p>
+    By default, the route becomes:
+</p>
+
+<pre>
+<code>
+/Student/Index
+</code>
+</pre>
+
+<hr />
+
+<h2>What is an Action Method?</h2>
+
+<p>
+    An Action Method is a public method inside a controller
+    that handles a specific request.
+</p>
+
+<h3>Example</h3>
+
+<pre>
+<code>
+public IActionResult Index()
+{
+    return View();
+}
+</code>
+</pre>
+
+<h3>Rules for Action Methods</h3>
+
+<ul>
+    <li>Must be public</li>
+    <li>Cannot be static</li>
+    <li>Should return IActionResult (best practice)</li>
+</ul>
+
+<hr />
+
+<h2>Types of Action Results</h2>
+
+<hr />
+
+<h3>1. ViewResult</h3>
+
+<pre>
+<code>
+return View();
+</code>
+</pre>
+
+<p>
+    Returns an HTML page using Razor View.
+</p>
+
+<hr />
+
+<h3>2. ContentResult</h3>
+
+<pre>
+<code>
+return Content("Hello");
+</code>
+</pre>
+
+<p>
+    Returns plain text response.
+</p>
+
+<hr />
+
+<h3>3. JsonResult</h3>
+
+<pre>
+<code>
+return Json(new { name = "Kunal" });
+</code>
+</pre>
+
+<p>
+    Returns JSON data.
+</p>
+
+<hr />
+
+<h3>4. RedirectResult</h3>
+
+<pre>
+<code>
+return Redirect("https://google.com");
+</code>
+</pre>
+
+<p>
+    Redirects the request to another URL.
+</p>
+
+<hr />
+
+<h3>5. RedirectToAction</h3>
+
+<pre>
+<code>
+return RedirectToAction("Index");
+</code>
+</pre>
+
+<p>
+    Redirects to another action method.
+</p>
+
+<p>
+    We can also redirect to an action method of another controller.
+</p>
+
+<pre>
+<code>
+return RedirectToAction("Index", "Products");
+</code>
+</pre>
+
+<hr />
+
+<h2>IActionResult (Core Concept)</h2>
+
+<p>
+    A controller action can return different types of responses.
+</p>
+
+<p>
+    <strong>IActionResult</strong> is a common return type
+    that allows returning different action results from the same action method.
+</p>
+
+<h3>Example</h3>
+
+<pre>
+<code>
+public IActionResult Index()
+{
+    return View();
+}
+</code>
+</pre>
+
+<hr />
+
+<h2>HTTP Methods in MVC</h2>
+
+<hr />
+
+<h3>GET Request</h3>
+
+<p>
+    GET requests are used to fetch data.
+</p>
+
+<pre>
+<code>
+[HttpGet]
+public IActionResult Index()
+{
+    return View();
+}
+</code>
+</pre>
+
+<hr />
+
+<h3>POST Request</h3>
+
+<p>
+    POST requests are used to send data to the server.
+</p>
+
+<pre>
+<code>
+[HttpPost]
+public IActionResult Create(Student s)
+{
+    return View();
+}
+</code>
+</pre>
+
+<hr />
+
+<h2>Multiple Actions in One Controller</h2>
+
+<p>
+    A single controller can contain multiple action methods.
+</p>
+
+<pre>
+<code>
+public class StudentController : Controller
+{
+    public IActionResult Index()
+    {
+        return View();
+    }
+
+    public IActionResult Details()
+    {
+        return View();
+    }
+}
+</code>
+</pre>
+
+<hr />
+
+<h2>How Controller Request Flow Works</h2>
+
+<pre>
+<code>
+User Request
+      ↓
+Routing System
+      ↓
+Controller
+      ↓
+Action Method
+      ↓
+Response Returned
+</code>
+</pre>
+
+<hr />
+
+<h2>Important Interview Point</h2>
+
+<p>
+    A Controller in ASP.NET Core MVC handles incoming HTTP requests,
+    executes business logic, and returns different types of responses
+    using action methods.
+</p>

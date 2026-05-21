@@ -1,8 +1,101 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="hero-section text-center">
+
+    <h1 class="display-4 fw-bold">
+        Learn ASP.NET Core MVC
+    </h1>
+
+    <p class="lead text-muted mt-3">
+
+        Practical tutorials on Middleware, Action Filters,
+        Routing and Real World ASP.NET Core Development.
+
+    </p>
+
+    <a asp-controller="Middleware"
+           asp-action="Index"
+           class="btn btn-dark btn-lg mt-3">
+
+        Start Learning
+
+    </a>
+
+</div>
+
+<!-- Feature Cards -->
+
+<div class="row mt-5 g-4">
+
+    <div class="col-md-4">
+
+        <div class="card custom-card h-100">
+
+            <div class="card-body">
+
+                <h4 class="fw-bold">
+                    Middleware
+                </h4>
+
+                <p class="text-muted">
+
+                    Learn middleware pipeline and request handling
+                    with practical examples.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="card custom-card h-100">
+
+            <div class="card-body">
+
+                <h4 class="fw-bold">
+                    Action Filters
+                </h4>
+
+                <p class="text-muted">
+
+                    Explore validation, authorization and
+                    exception handling filters.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="card custom-card h-100">
+
+            <div class="card-body">
+
+                <h4 class="fw-bold">
+                    Real World Examples
+                </h4>
+
+                <p class="text-muted">
+
+                    Build enterprise-level ASP.NET Core
+                    applications with confidence.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </div>

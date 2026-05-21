@@ -21,7 +21,6 @@ D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\rjsmcshtm
 D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\scopedcss\bundle\Dotnet Tutorials.styles.css
 D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\scopedcss\projectbundle\Dotnet Tutorials.bundle.scp.css
-D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\zioio29g64-{0}-b9sayid5wm-b9sayid5wm.gz
 D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\cqkipzw9p9-{0}-61n19gt1b8-61n19gt1b8.gz
 D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\pua2tl8usv-{0}-xtxxf3hu2r-xtxxf3hu2r.gz
 D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\9ti1mtzwrj-{0}-bqjiyaj88i-bqjiyaj88i.gz
@@ -96,3 +95,5 @@ D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\refint\Do
 D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\Dotnet Tutorials.pdb
 D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\Dotnet Tutorials.genruntimeconfig.cache
 D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\ref\Dotnet Tutorials.dll
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\Dotnet Tutorials.sourcelink.json
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\zioio29g64-{0}-xoiaxbtt79-xoiaxbtt79.gz

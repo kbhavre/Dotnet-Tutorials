@@ -1,0 +1,227 @@
+﻿<h1>Introduction to ASP.NET Core MVC</h1>
+
+<p>
+    MVC stands for:
+</p>
+
+<ul>
+    <li>Model</li>
+    <li>View</li>
+    <li>Controller</li>
+</ul>
+
+<p>
+    MVC is a design pattern used to separate application logic into different components.
+</p>
+
+<p>
+    Instead of writing everything in one place:
+</p>
+
+<ul>
+    <li>Model → Handles Data</li>
+    <li>View → Handles UI</li>
+    <li>Controller → Handles Logic</li>
+</ul>
+
+<p>
+    MVC helps in creating clean, maintainable, and scalable applications.
+</p>
+
+<hr />
+
+<h2>What is MVC?</h2>
+
+<p>
+    MVC is a design pattern that separates an application into:
+</p>
+
+<ul>
+    <li><strong>Model</strong> → Data Layer</li>
+    <li><strong>View</strong> → UI Layer</li>
+    <li><strong>Controller</strong> → Logic Layer</li>
+</ul>
+
+<p>
+    A request goes through routing to a controller,
+    the controller processes data using models,
+    and finally returns a view as response.
+</p>
+
+<hr />
+
+<h2>Components of MVC</h2>
+
+<hr />
+
+<h3>1. Model (Data Layer)</h3>
+
+<p>
+    Model represents application data and business logic.
+</p>
+
+<p>
+    Models are usually C# classes.
+</p>
+
+<h4>Example</h4>
+
+<pre>
+<code>
+public class Student
+{
+    public int Id { get; set; }
+
+    public string Name { get; set; }
+}
+</code>
+</pre>
+
+<h4>Responsibilities</h4>
+
+<ul>
+    <li>Data handling</li>
+    <li>Validation rules</li>
+    <li>Business data representation</li>
+</ul>
+
+<hr />
+
+<h3>2. View (UI Layer)</h3>
+
+<p>
+    View is the user interface of the application.
+</p>
+
+<p>
+    It displays data to the user using HTML and Razor syntax.
+</p>
+
+<h4>Example</h4>
+
+<pre>
+<code>
+<h1>@Model.Name</h1>
+</code>
+</pre>
+
+<h4>Responsibilities</h4>
+
+<ul>
+    <li>UI rendering</li>
+    <li>Displaying data</li>
+</ul>
+
+<hr />
+
+<h3>3. Controller (Logic Layer)</h3>
+
+<p>
+    Controller handles incoming HTTP requests.
+</p>
+
+<p>
+    It connects the Model and View together.
+</p>
+
+<h4>Example</h4>
+
+<pre>
+<code>
+public class StudentController : Controller
+{
+    public IActionResult Index()
+    {
+        var student = new Student
+        {
+            Name = "John"
+        };
+
+        return View(student);
+    }
+}
+</code>
+</pre>
+
+<h4>Responsibilities</h4>
+
+<ul>
+    <li>Request handling</li>
+    <li>Business logic execution</li>
+    <li>Returning response</li>
+</ul>
+
+<hr />
+
+<h2>How MVC Works (Request Flow)</h2>
+
+<pre>
+<code>
+User enters URL
+       ↓
+Request goes to Routing System
+       ↓
+Routing finds Controller + Action
+       ↓
+Controller executes logic
+       ↓
+Data comes from Model
+       ↓
+Controller sends data to View
+       ↓
+View renders HTML
+       ↓
+Response goes back to User
+</code>
+</pre>
+
+<hr />
+
+<h2>Request Lifecycle in MVC</h2>
+
+<ul>
+    <li>Request hits the server</li>
+    <li>Middleware pipeline executes</li>
+    <li>Routing identifies endpoint</li>
+    <li>Controller action executes</li>
+    <li>Response is generated</li>
+</ul>
+
+<hr />
+
+<h2>Create Your First MVC Project</h2>
+
+<pre>
+<code>
+dotnet new mvc -n MyFirstMvcApp
+
+cd MyFirstMvcApp
+
+dotnet run
+</code>
+</pre>
+
+<hr />
+
+<h2>Understand MVC Folder Structure</h2>
+
+<p>
+    When an MVC project is created, the following folders are generated:
+</p>
+
+<ul>
+    <li><strong>Controllers/</strong> → Contains all controllers</li>
+    <li><strong>Models/</strong> → Contains model classes</li>
+    <li><strong>Views/</strong> → Contains Razor UI files</li>
+    <li><strong>wwwroot/</strong> → Contains static files like CSS and JavaScript</li>
+    <li><strong>Program.cs</strong> → Application startup configuration</li>
+</ul>
+
+<hr />
+
+<h2>Important Interview Point</h2>
+
+<p>
+    MVC is a design pattern in ASP.NET Core that separates an application into
+    Model, View, and Controller to achieve separation of concerns and better maintainability.
+</p>

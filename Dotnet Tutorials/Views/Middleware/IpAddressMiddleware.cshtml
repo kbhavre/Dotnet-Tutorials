@@ -1,0 +1,92 @@
+﻿<h1>IP Address Middleware</h1>
+
+<p>
+    IP Address Middleware is used to capture and log the client's IP address
+    for every incoming HTTP request. This middleware helps in tracking users,
+    monitoring requests, security auditing, rate limiting, and request analysis.
+</p>
+
+<hr />
+
+<h3>Step 1: Create IpAddressMiddleware.cs File</h3>
+
+<p>
+    Create a new file named <strong>IpAddressMiddleware.cs</strong> inside the
+    <strong>Middlewares</strong> folder.
+</p>
+
+<pre>
+<code>
+namespace Dotnet_Tutorials.Middlewares
+{
+    public class IpAddressMiddleware
+    {
+        private readonly RequestDelegate _next;
+
+        public IpAddressMiddleware(RequestDelegate next)
+        {
+            _next = next;
+        }
+
+        public async Task InvokeAsync(HttpContext context)
+        {
+            var ipAddress = context.Connection.RemoteIpAddress;
+
+            Console.WriteLine($"User IP Address: {ipAddress}");
+
+            await _next(context);
+        }
+    }
+}
+</code>
+</pre>
+
+<hr />
+
+<h3>Step 2: Register the Middleware</h3>
+
+<p>
+    Register the middleware inside <strong>Program.cs</strong>.
+</p>
+
+<pre>
+<code>
+app.UseMiddleware&lt;IpAddressMiddleware&gt;();
+</code>
+</pre>
+
+<p>
+    Add this line before:
+</p>
+
+<pre>
+<code>
+app.UseRouting();
+</code>
+</pre>
+
+<hr />
+
+<h3>How It Works</h3>
+
+<ul>
+    <li>Middleware intercepts every incoming HTTP request.</li>
+    <li>It accesses the current request using <strong>HttpContext</strong>.</li>
+    <li>The client's IP address is retrieved using <strong>context.Connection.RemoteIpAddress</strong>.</li>
+    <li>The IP address is printed in the console.</li>
+    <li>The request is then forwarded to the next middleware using <strong>await _next(context)</strong>.</li>
+</ul>
+
+<hr />
+
+<h3>Output Example</h3>
+
+<pre>
+<code>
+User IP Address: ::1
+</code>
+</pre>
+
+<p>
+    <strong>::1</strong> represents the localhost IPv6 address when running the application locally.
+</p>

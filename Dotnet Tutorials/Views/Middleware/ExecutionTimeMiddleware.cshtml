@@ -1,0 +1,92 @@
+﻿<h1>Execution Time Middleware</h1>
+
+<p>
+    Execution Time Middleware is used to measure how much time a request takes to complete.
+    It helps developers analyze application performance and identify slow requests.
+    This middleware starts a timer before the request goes to the next middleware or controller,
+    and stops the timer once the response comes back.
+</p>
+
+<hr />
+
+<h3>Step 1: Create ExecutionTimeMiddleware.cs File</h3>
+
+<p>
+    Create a new file named <strong>ExecutionTimeMiddleware.cs</strong> inside the
+    <strong>Middleware</strong> folder.
+</p>
+
+<pre>
+<code>
+using System.Diagnostics;
+
+namespace Dotnet_Tutorials.Middlewares
+{
+    public class ExecutionTimeMiddleware
+    {
+        private readonly RequestDelegate _next;
+
+        public ExecutionTimeMiddleware(RequestDelegate next)
+        {
+            _next = next;
+        }
+
+        public async Task InvokeAsync(HttpContext context)
+        {
+            var stopwatch = Stopwatch.StartNew();
+
+            await _next(context);
+
+            stopwatch.Stop();
+
+            Console.WriteLine($"Request Time: {stopwatch.ElapsedMilliseconds} ms");
+        }
+    }
+}
+</code>
+</pre>
+
+<hr />
+
+<h3>Step 2: Register the Middleware</h3>
+
+<p>
+    Register the middleware inside <strong>Program.cs</strong>.
+</p>
+
+<pre>
+<code>
+app.UseMiddleware&lt;ExecutionTimeMiddleware&gt;();
+</code>
+</pre>
+
+<p>
+    Add this line before:
+</p>
+
+<pre>
+<code>
+app.UseRouting();
+</code>
+</pre>
+
+<hr />
+
+<h3>How It Works</h3>
+
+<ul>
+    <li>Middleware starts a stopwatch.</li>
+    <li>Request moves to next middleware/controller using <strong>await _next(context)</strong>.</li>
+    <li>After response returns, stopwatch stops.</li>
+    <li>Total execution time is printed in console.</li>
+</ul>
+
+<hr />
+
+<h3>Output Example</h3>
+
+<pre>
+<code>
+Request Time: 245 ms
+</code>
+</pre>

@@ -1,0 +1,98 @@
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\bin\Debug\net10.0\appsettings.Development.json
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\bin\Debug\net10.0\appsettings.json
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\bin\Debug\net10.0\Dotnet Tutorials.staticwebassets.runtime.json
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\bin\Debug\net10.0\Dotnet Tutorials.staticwebassets.endpoints.json
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\bin\Debug\net10.0\Dotnet Tutorials.exe
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\bin\Debug\net10.0\Dotnet Tutorials.deps.json
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\bin\Debug\net10.0\Dotnet Tutorials.runtimeconfig.json
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\bin\Debug\net10.0\Dotnet Tutorials.dll
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\bin\Debug\net10.0\Dotnet Tutorials.pdb
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\rpswa.dswa.cache.json
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\Dotnet Tutorials.GeneratedMSBuildEditorConfig.editorconfig
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\Dotnet Tutorials.AssemblyInfoInputs.cache
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\Dotnet Tutorials.AssemblyInfo.cs
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\Dotnet Tutorials.csproj.CoreCompileInputs.cache
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\Dotnet Tutorials.MvcApplicationPartsAssemblyInfo.cache
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\Dotnet Tutorials.RazorAssemblyInfo.cache
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\Dotnet Tutorials.RazorAssemblyInfo.cs
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\rjimswa.dswa.cache.json
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\scopedcss\bundle\Dotnet Tutorials.styles.css
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\scopedcss\projectbundle\Dotnet Tutorials.bundle.scp.css
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\zioio29g64-{0}-b9sayid5wm-b9sayid5wm.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\cqkipzw9p9-{0}-61n19gt1b8-61n19gt1b8.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\pua2tl8usv-{0}-xtxxf3hu2r-xtxxf3hu2r.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\9ti1mtzwrj-{0}-bqjiyaj88i-bqjiyaj88i.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\dfojpf8f0t-{0}-c2jlpeoesf-c2jlpeoesf.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\ql1oulh7o6-{0}-erw9l3u2r3-erw9l3u2r3.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\8zfobaoi8k-{0}-aexeepp0ev-aexeepp0ev.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\vb5224g0s0-{0}-d7shbmvgxk-d7shbmvgxk.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\gviemymhmj-{0}-ausgxo2sd3-ausgxo2sd3.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\ddsdo6zskf-{0}-k8d9w2qqmf-k8d9w2qqmf.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\s0ntfdnuoa-{0}-cosvhxvwiu-cosvhxvwiu.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\3osvhl10br-{0}-ub07r2b239-ub07r2b239.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\uuxnm5pd7z-{0}-fvhpjtyr6v-fvhpjtyr6v.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\7z3x5mk8mj-{0}-b7pk76d08c-b7pk76d08c.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\a24omq9ys9-{0}-fsbi9cje9m-fsbi9cje9m.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\flmj27os7o-{0}-rzd6atqjts-rzd6atqjts.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\y6q2ia9s38-{0}-ee0r1s7dh0-ee0r1s7dh0.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\dj7a7ekfko-{0}-dxx9fxp4il-dxx9fxp4il.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\20z8kh5ub5-{0}-jd9uben2k1-jd9uben2k1.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\g7xnguoea8-{0}-khv3u5hwcm-khv3u5hwcm.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\jjf8nv35ci-{0}-r4e9w2rdcm-r4e9w2rdcm.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\ryt0nycylj-{0}-lcd1t2u6c8-lcd1t2u6c8.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\4goagnyvlp-{0}-c2oey78nd0-c2oey78nd0.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\g5fz12ckr3-{0}-tdbxkamptv-tdbxkamptv.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\b7ym24w63w-{0}-j5mq2jizvt-j5mq2jizvt.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\zmhyezxxsf-{0}-06098lyss8-06098lyss8.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\ctlnn5pxqx-{0}-nvvlpmu67g-nvvlpmu67g.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\7uyl7eitpj-{0}-s35ty4nyc5-s35ty4nyc5.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\8xv45xz68v-{0}-pj5nd1wqec-pj5nd1wqec.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\qh0wcec1et-{0}-46ein0sx1k-46ein0sx1k.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\fk1baxxcgv-{0}-v0zj4ognzu-v0zj4ognzu.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\lhz1glwrcu-{0}-37tfw0ft22-37tfw0ft22.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\2sp2268kzp-{0}-hrwsygsryq-hrwsygsryq.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\fcrqz6te0x-{0}-pk9g2wxc8p-pk9g2wxc8p.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\3awxt6uo65-{0}-ft3s53vfgj-ft3s53vfgj.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\9sofmes56v-{0}-6cfz1n2cew-6cfz1n2cew.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\gcbomgvi2d-{0}-6pdc2jztkx-6pdc2jztkx.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\ydvcu4oz6h-{0}-493y06b0oq-493y06b0oq.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\l80he365ge-{0}-iovd86k7lj-iovd86k7lj.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\okgoejliji-{0}-vr1egmr9el-vr1egmr9el.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\8mmw1dpv9y-{0}-kbrnm935zg-kbrnm935zg.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\297tes11rl-{0}-jj8uyg4cgr-jj8uyg4cgr.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\igwsfju3ia-{0}-y7v9cxd14o-y7v9cxd14o.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\z0x1aelbmx-{0}-notf2xhcfb-notf2xhcfb.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\movs3cepx3-{0}-h1s4sie4z3-h1s4sie4z3.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\jzwh8vwz1i-{0}-63fj8s7r0e-63fj8s7r0e.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\xdqsopffn2-{0}-0j3bgjxly4-0j3bgjxly4.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\csx1m568n6-{0}-47otxtyo56-47otxtyo56.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\tkrc6s7m0b-{0}-4v8eqarkd7-4v8eqarkd7.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\6i1g1ncyvm-{0}-356vix0kms-356vix0kms.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\26v03hlux2-{0}-83jwlth58m-83jwlth58m.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\ihbjbqhlz9-{0}-mrlpezrjn3-mrlpezrjn3.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\u7fohqcl9n-{0}-lzl9nlhx6b-lzl9nlhx6b.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\5gqkd0rmiy-{0}-ag7o75518u-ag7o75518u.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\8xl3fhvogp-{0}-x0q3zqp4vz-x0q3zqp4vz.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\rxfpxgc4ld-{0}-0i3buxo5is-0i3buxo5is.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\rulot4vc5b-{0}-o1o13a6vjx-o1o13a6vjx.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\67h22144hi-{0}-ttgo8qnofa-ttgo8qnofa.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\x39ndxp8gi-{0}-2z0ns9nrw6-2z0ns9nrw6.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\txnider7ct-{0}-muycvpuwrr-muycvpuwrr.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\ypck8wy6sb-{0}-87fc7y1x7t-87fc7y1x7t.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\rcnns7w0g8-{0}-mlv21k5csn-mlv21k5csn.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\l8fthu3mpt-{0}-vgd9itpzh1-vgd9itpzh1.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\f5x74n390u-{0}-vgd9itpzh1-vgd9itpzh1.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\staticwebassets.build.json
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\staticwebassets.build.json.cache
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\staticwebassets.development.json
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\staticwebassets.build.endpoints.json
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\swae.build.ex.cache
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\Dotnet Tutorials.dll
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\refint\Dotnet Tutorials.dll
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\Dotnet Tutorials.pdb
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\Dotnet Tutorials.genruntimeconfig.cache
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\ref\Dotnet Tutorials.dll

@@ -1,0 +1,107 @@
+is_global = true
+build_property.TargetFramework = net10.0
+build_property.TargetFrameworkIdentifier = .NETCoreApp
+build_property.TargetFrameworkVersion = v10.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Dotnet_Tutorials
+build_property.RootNamespace = Dotnet_Tutorials
+build_property.ProjectDir = D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 9.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 10.0
+build_property.EnableCodeStyleSeverity = 
+
+[D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/AuthorizationFilter/Dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yaXphdGlvbkZpbHRlclxEYXNoYm9hcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/ExceptionFilter/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhjZXB0aW9uRmlsdGVyXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/ExceptionFilter/Result.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhjZXB0aW9uRmlsdGVyXFJlc3VsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/LoggerFilter/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9nZ2VyRmlsdGVyXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/LoggerFilter/Result.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9nZ2VyRmlsdGVyXFJlc3VsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/Middleware/AppMap.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWlkZGxld2FyZVxBcHBNYXAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/Middleware/AppRun.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWlkZGxld2FyZVxBcHBSdW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/Middleware/ExecutionTimeMiddleware.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWlkZGxld2FyZVxFeGVjdXRpb25UaW1lTWlkZGxld2FyZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/Middleware/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWlkZGxld2FyZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/Middleware/IpAddressMiddleware.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWlkZGxld2FyZVxJcEFkZHJlc3NNaWRkbGV3YXJlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/Middleware/RequestLoggingMiddleware.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWlkZGxld2FyZVxSZXF1ZXN0TG9nZ2luZ01pZGRsZXdhcmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/ValidationFilter/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmFsaWRhdGlvbkZpbHRlclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/ValidationFilter/Success.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmFsaWRhdGlvbkZpbHRlclxTdWNjZXNzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-u997qq8v7b

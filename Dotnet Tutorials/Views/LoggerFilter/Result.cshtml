@@ -1,0 +1,19 @@
+﻿@model Dotnet_Tutorials.Models.ProductModel
+
+<h2>Product Details</h2>
+
+<hr />
+
+<h4>Product Id : @Model.ProductId</h4>
+
+<h4>Product Name : @Model.ProductName</h4>
+
+<h4>Price : @Model.Price</h4>
+
+<a asp-controller="LoggerFilter"
+       asp-action="Index"
+       class="btn btn-secondary">
+
+    Back
+
+</a>

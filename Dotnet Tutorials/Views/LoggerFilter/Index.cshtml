@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Logger Filter";
+}
+
+<h2>Logger Filter</h2>
+
+<form asp-controller="LoggerFilter"
+      asp-action="GetProduct"
+      method="post">
+
+    <div class="mb-3">
+
+        <label class="form-label">
+            Enter Product Id
+        </label>
+
+        <input type="number"
+               name="productId"
+               class="form-control" />
+
+    </div>
+
+    <button type="submit"
+            class="btn btn-primary">
+
+        Get Product
+
+    </button>
+
+</form>

@@ -1,0 +1,287 @@
+﻿<h1>app.Run() Middleware in ASP.NET Core</h1>
+
+<p>
+    <strong>app.Run()</strong> is used to create a terminal middleware in ASP.NET Core.
+</p>
+
+<p>
+    Terminal middleware means the request pipeline stops at this middleware
+    and no middleware written after it will execute.
+</p>
+
+<hr />
+
+<h2>Basic Syntax</h2>
+
+<pre>
+<code>
+app.Run(async context =>
+{
+    await context.Response.WriteAsync("Hello from app.Run()");
+});
+</code>
+</pre>
+
+<hr />
+
+<h2>How app.Run() Works</h2>
+
+<ul>
+    <li>Request enters the middleware pipeline.</li>
+    <li>app.Run() handles the request.</li>
+    <li>Response is returned to the client.</li>
+    <li>The middleware pipeline stops execution.</li>
+</ul>
+
+<hr />
+
+<h2>Important Point</h2>
+
+<p>
+    <strong>app.Run()</strong> does not have a <strong>next</strong> parameter,
+    therefore it cannot forward the request to the next middleware.
+</p>
+
+<hr />
+
+<h2>Example 1: Simple Response</h2>
+
+<pre>
+<code>
+app.Run(async context =>
+{
+    await context.Response.WriteAsync("Website is Running");
+});
+</code>
+</pre>
+
+<h3>Output</h3>
+
+<pre>
+<code>
+Website is Running
+</code>
+</pre>
+
+<hr />
+
+<h2>Example 2: Middleware After app.Run()</h2>
+
+<pre>
+<code>
+app.Run(async context =>
+{
+    await context.Response.WriteAsync("Pipeline Ended");
+});
+
+app.Use(async (context, next) =>
+{
+    Console.WriteLine("This will never execute");
+
+    await next();
+});
+</code>
+</pre>
+
+<h3>Explanation</h3>
+
+<p>
+    The second middleware will never execute because
+    <strong>app.Run()</strong> terminates the request pipeline.
+</p>
+
+<hr />
+
+<h2>Internal Request Flow</h2>
+
+<pre>
+<code>
+Client Request
+       ↓
+Middleware
+       ↓
+app.Run()
+       ↓
+Response Returned
+</code>
+</pre>
+
+<hr />
+
+<h2>Difference Between app.Use() and app.Run()</h2>
+
+<table border="1" cellpadding="10">
+
+    <tr>
+        <th>Feature</th>
+        <th>app.Use()</th>
+        <th>app.Run()</th>
+    </tr>
+
+    <tr>
+        <td>Pipeline Continues</td>
+        <td>Yes</td>
+        <td>No</td>
+    </tr>
+
+    <tr>
+        <td>Has next Parameter</td>
+        <td>Yes</td>
+        <td>No</td>
+    </tr>
+
+    <tr>
+        <td>Middleware Type</td>
+        <td>Normal Middleware</td>
+        <td>Terminal Middleware</td>
+    </tr>
+
+</table>
+
+<hr />
+
+<h2>Real Use Cases of app.Run()</h2>
+
+<ul>
+    <li>Maintenance Mode Page</li>
+    <li>Final Response Middleware</li>
+    <li>Minimal APIs</li>
+    <li>Fallback Response Handling</li>
+</ul>
+
+<hr />
+
+<h2>Important Interview Point</h2>
+
+<p>
+    app.Run() is a terminal middleware in ASP.NET Core that handles
+    the HTTP request and stops further middleware execution.
+</p>
+
+<hr class="mt-5 border-danger border-2" />
+
+<h2 class="mt-5">Real Example: Maintenance Mode Page</h2>
+
+<p>
+    One of the most common real-world uses of <strong>app.Run()</strong>
+    is to temporarily stop the application and show a maintenance message
+    to all users.
+</p>
+
+<p>
+    Since <strong>app.Run()</strong> is terminal middleware,
+    the request pipeline stops immediately after this middleware executes.
+</p>
+
+<hr />
+
+<h3>Step 1: Open Program.cs File</h3>
+
+<p>
+    Open the <strong>Program.cs</strong> file of your ASP.NET Core MVC project.
+</p>
+
+<hr />
+
+<h3>Step 2: Add app.Run() Middleware</h3>
+
+<p>
+    Add the following code before:
+</p>
+
+<pre>
+<code>
+app.MapControllerRoute(
+</code>
+</pre>
+
+<p>
+    Add this middleware:
+</p>
+
+<pre>
+<code>
+app.Run(async context =>
+{
+    await context.Response.WriteAsync("Website is Under Maintenance");
+});
+</code>
+</pre>
+
+<hr />
+
+<h3>Step 3: Run the Application</h3>
+
+<p>
+    Run the application and open any URL.
+</p>
+
+<p>
+    Every request will display:
+</p>
+
+<pre>
+<code>
+Website is Under Maintenance
+</code>
+</pre>
+
+<hr />
+
+<h3>Important Observation</h3>
+
+<p>
+    Controllers, views, and middleware written after
+    <strong>app.Run()</strong> will not execute because
+    app.Run() terminates the request pipeline.
+</p>
+
+<hr />
+
+<h3>Internal Request Flow</h3>
+
+<pre>
+<code>
+Client Request
+       ↓
+app.Run()
+       ↓
+Maintenance Message Returned
+       ↓
+Pipeline Ends
+</code>
+</pre>
+
+<hr />
+
+<h3>Program.cs Example</h3>
+
+<pre>
+<code>
+var app = builder.Build();
+
+app.UseHttpsRedirection();
+
+app.UseRouting();
+
+app.Run(async context =>
+{
+    await context.Response.WriteAsync("Website is Under Maintenance");
+});
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.Run();
+</code>
+</pre>
+
+<hr />
+
+<h3>Important Interview Point</h3>
+
+<p>
+    app.Run() is commonly used to create maintenance pages,
+    fallback handlers, and terminal middleware in ASP.NET Core.
+</p>

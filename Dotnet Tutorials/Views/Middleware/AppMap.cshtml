@@ -1,0 +1,236 @@
+﻿<h1>app.Map() Middleware in ASP.NET Core</h1>
+
+<p>
+    <strong>app.Map()</strong> is used to create a separate middleware pipeline
+    based on a specific URL path.
+</p>
+
+<p>
+    It allows ASP.NET Core applications to branch the request pipeline
+    for different routes.
+</p>
+
+<hr />
+
+<h2>Basic Syntax</h2>
+
+<pre>
+<code>
+app.Map("/admin", adminApp =>
+{
+    adminApp.Run(async context =>
+    {
+        await context.Response.WriteAsync("Welcome to Admin Panel");
+    });
+});
+</code>
+</pre>
+
+<hr />
+
+<h2>How app.Map() Works</h2>
+
+<ul>
+    <li>ASP.NET Core checks the incoming request URL.</li>
+    <li>If the URL matches the specified path, request enters the mapped branch.</li>
+    <li>A separate middleware pipeline executes for that branch.</li>
+    <li>If the URL does not match, the normal pipeline continues.</li>
+</ul>
+
+<hr />
+
+<h2>Important Point</h2>
+
+<p>
+    <strong>app.Map()</strong> creates a completely separate middleware branch
+    for a specific request path.
+</p>
+
+<hr />
+
+<h2>Example 1: Admin Route Branch</h2>
+
+<pre>
+<code>
+app.Map("/admin", adminApp =>
+{
+    adminApp.Run(async context =>
+    {
+        await context.Response.WriteAsync("Welcome to Admin Panel");
+    });
+});
+</code>
+</pre>
+
+<h3>URL</h3>
+
+<pre>
+<code>
+https://localhost:xxxx/admin
+</code>
+</pre>
+
+<h3>Output</h3>
+
+<pre>
+<code>
+Welcome to Admin Panel
+</code>
+</pre>
+
+<hr />
+
+<h2>Internal Request Flow</h2>
+
+<pre>
+<code>
+Client Request
+       ↓
+Check URL Path
+       ↓
+/admin Matched
+       ↓
+Admin Middleware Branch
+       ↓
+Response Returned
+</code>
+</pre>
+
+<hr />
+
+<h2>Difference Between app.Use() and app.Map()</h2>
+
+<table border="1" cellpadding="10">
+
+    <tr>
+        <th>Feature</th>
+        <th>app.Use()</th>
+        <th>app.Map()</th>
+    </tr>
+
+    <tr>
+        <td>Purpose</td>
+        <td>Add Middleware</td>
+        <td>Create Middleware Branch</td>
+    </tr>
+
+    <tr>
+        <td>Works Based On</td>
+        <td>Pipeline Order</td>
+        <td>URL Path</td>
+    </tr>
+
+    <tr>
+        <td>Creates Separate Pipeline</td>
+        <td>No</td>
+        <td>Yes</td>
+    </tr>
+
+</table>
+
+<hr />
+
+<h2>Real World Use Case: Admin Panel Middleware</h2>
+
+<p>
+    In real applications, app.Map() is commonly used to create
+    separate pipelines for:
+</p>
+
+<ul>
+    <li>Admin Panels</li>
+    <li>API Versioning</li>
+    <li>Tenant-Based Applications</li>
+    <li>Health Check Endpoints</li>
+</ul>
+
+<hr />
+
+<h3>Step 1: Open Program.cs File</h3>
+
+<p>
+    Open the <strong>Program.cs</strong> file of your ASP.NET Core MVC project.
+</p>
+
+<hr />
+
+<h3>Step 2: Add app.Map() Middleware</h3>
+
+<p>
+    Add the following code before:
+</p>
+
+<pre>
+<code>
+app.MapControllerRoute(
+</code>
+</pre>
+
+<p>
+    Add this middleware:
+</p>
+
+<pre>
+<code>
+app.Map("/admin", adminApp =>
+{
+    adminApp.Run(async context =>
+    {
+        context.Response.ContentType = "text/html";
+
+        await context.Response.WriteAsync("
+            &lt;h1&gt;Admin Dashboard&lt;/h1&gt;
+            &lt;p&gt;Welcome to the Admin Panel.&lt;/p&gt;
+        ");
+    });
+});
+</code>
+</pre>
+
+<hr />
+
+<h3>Step 3: Run the Application</h3>
+
+<p>
+    Run the application and open:
+</p>
+
+<pre>
+<code>
+https://localhost:xxxx/admin
+</code>
+</pre>
+
+<hr />
+
+<h3>Browser Output</h3>
+
+<div style="border:1px solid #ccc; padding:20px; margin-top:10px;">
+
+    <h1>Admin Dashboard</h1>
+
+    <p>Welcome to the Admin Panel.</p>
+
+</div>
+
+<hr />
+
+<h3>Important Observation</h3>
+
+<p>
+    Only requests starting with <strong>/admin</strong>
+    will enter this middleware branch.
+</p>
+
+<p>
+    All other requests will continue through the normal middleware pipeline.
+</p>
+
+<hr />
+
+<h2>Important Interview Point</h2>
+
+<p>
+    app.Map() is used to create separate middleware branches in ASP.NET Core
+    based on URL paths.
+</p>

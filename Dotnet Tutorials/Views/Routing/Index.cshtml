@@ -1,0 +1,211 @@
+﻿<h1>Introduction to Routing in ASP.NET Core MVC</h1>
+
+<p>
+    Routing is the process of matching an incoming URL
+    to a controller and action method.
+</p>
+
+<hr />
+
+<h2>Why Routing is Needed?</h2>
+
+<p>
+    When a user sends a request to the application,
+    ASP.NET Core must decide:
+</p>
+
+<ul>
+    <li>Which controller should handle the request?</li>
+    <li>Which action method should execute?</li>
+    <li>What parameter values should be passed?</li>
+</ul>
+
+<p>
+    Routing solves this problem by mapping URLs to endpoints.
+</p>
+
+<hr />
+
+<h2>Simple Example</h2>
+
+<pre>
+<code>
+https://localhost:5001/Product/Details/5
+</code>
+</pre>
+
+<p>
+    Routing extracts:
+</p>
+
+<ul>
+    <li>Product → Controller</li>
+    <li>Details → Action Method</li>
+    <li>5 → Route Parameter</li>
+</ul>
+
+<hr />
+
+<h2>How Routing Works Internally</h2>
+
+<pre>
+<code>
+Browser Request
+        ↓
+Middleware Pipeline
+        ↓
+Routing Middleware
+        ↓
+Controller
+        ↓
+Action Method
+        ↓
+Response Returned
+</code>
+</pre>
+
+<hr />
+
+<h2>Routing Middleware</h2>
+
+<p>
+    Routing works using the routing middleware.
+</p>
+
+<p>
+    In ASP.NET Core, routing middleware is enabled using:
+</p>
+
+<pre>
+<code>
+app.UseRouting();
+</code>
+</pre>
+
+<p>
+    This middleware analyzes the incoming URL
+    and finds the matching endpoint.
+</p>
+
+<hr />
+
+<h2>What is an Endpoint?</h2>
+
+<p>
+    An endpoint is the final destination of a request.
+</p>
+
+<p>
+    In MVC applications:
+</p>
+
+<pre>
+<code>
+Controller Action = Endpoint
+</code>
+</pre>
+
+<p>
+    Example:
+</p>
+
+<pre>
+<code>
+/Product/Details
+</code>
+</pre>
+
+<p>
+    This URL points to a specific controller action.
+</p>
+
+<hr />
+
+<h2>Types of Routing</h2>
+
+<h3>1. Conventional Routing</h3>
+
+<p>
+    Routes are defined centrally inside Program.cs.
+</p>
+
+<pre>
+<code>
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
+</code>
+</pre>
+
+<hr />
+
+<h3>2. Attribute Routing</h3>
+
+<p>
+    Routes are defined directly on controllers or actions.
+</p>
+
+<pre>
+<code>
+[Route("products/all")]
+</code>
+</pre>
+
+<hr />
+
+<h2>Conventional Routing vs Attribute Routing</h2>
+
+<table border="1" cellpadding="10">
+
+    <tr>
+        <th>Conventional Routing</th>
+        <th>Attribute Routing</th>
+    </tr>
+
+    <tr>
+        <td>Defined in Program.cs</td>
+        <td>Defined on Controllers/Actions</td>
+    </tr>
+
+    <tr>
+        <td>Centralized Routing</td>
+        <td>Distributed Routing</td>
+    </tr>
+
+    <tr>
+        <td>Best for MVC Applications</td>
+        <td>Best for Web APIs</td>
+    </tr>
+
+</table>
+
+<hr />
+
+<h2>Important Interview Points</h2>
+
+<ul>
+    <li>
+        Routing is the process of mapping incoming requests
+        to controller actions or endpoints.
+    </li>
+
+    <li>
+        Routing happens after middleware execution begins
+        and before controller action execution.
+    </li>
+
+    <li>
+        Routing middleware analyzes the incoming URL
+        and finds the matching endpoint.
+    </li>
+</ul>
+
+<hr />
+
+<h2>Final Conclusion</h2>
+
+<p>
+    Routing is one of the core concepts in ASP.NET Core MVC.
+    It helps the framework determine which controller and action
+    should handle an incoming request.
+</p>

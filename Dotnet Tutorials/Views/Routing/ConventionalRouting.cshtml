@@ -1,0 +1,370 @@
+﻿<h1>Conventional Routing in ASP.NET Core MVC</h1>
+
+<p>
+    Conventional Routing is the default routing mechanism in ASP.NET Core MVC
+    where routes are defined centrally inside <strong>Program.cs</strong>.
+</p>
+
+<p>
+    It follows a predefined URL pattern to map incoming requests
+    to controllers and action methods.
+</p>
+
+<hr />
+
+<h2>Where Conventional Routing is Defined?</h2>
+
+<p>
+    Conventional routing is configured inside:
+</p>
+
+<pre>
+<code>
+Program.cs
+</code>
+</pre>
+
+<p>
+    Example:
+</p>
+
+<pre>
+<code>
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
+</code>
+</pre>
+
+<hr />
+
+<h2>Understanding the Route Pattern</h2>
+
+<pre>
+<code>
+{controller=Home}/{action=Index}/{id?}
+</code>
+</pre>
+
+<p>
+    This route pattern contains three parts:
+</p>
+
+<ul>
+    <li>Controller</li>
+    <li>Action</li>
+    <li>Route Parameter</li>
+</ul>
+
+<hr />
+
+<h2>1. Controller Segment</h2>
+
+<pre>
+<code>
+{controller=Home}
+</code>
+</pre>
+
+<p>
+    The first URL segment maps to the controller.
+</p>
+
+<p>
+    If no controller is provided,
+    MVC uses the default controller:
+</p>
+
+<pre>
+<code>
+HomeController
+</code>
+</pre>
+
+<p>
+    Example:
+</p>
+
+<pre>
+<code>
+/Product
+</code>
+</pre>
+
+<p>
+    MVC searches for:
+</p>
+
+<pre>
+<code>
+ProductController
+</code>
+</pre>
+
+<hr />
+
+<h2>2. Action Segment</h2>
+
+<pre>
+<code>
+{action=Index}
+</code>
+</pre>
+
+<p>
+    The second URL segment maps to the action method.
+</p>
+
+<p>
+    If no action is provided,
+    MVC uses the default action:
+</p>
+
+<pre>
+<code>
+Index()
+</code>
+</pre>
+
+<p>
+    Example:
+</p>
+
+<pre>
+<code>
+/Product/Details
+</code>
+</pre>
+
+<p>
+    MVC searches for:
+</p>
+
+<pre>
+<code>
+public IActionResult Details()
+</code>
+</pre>
+
+<hr />
+
+<h2>3. Route Parameter</h2>
+
+<pre>
+<code>
+{id?}
+</code>
+</pre>
+
+<p>
+    This represents an optional route parameter.
+</p>
+
+<p>
+    The <strong>?</strong> symbol means the parameter is optional.
+</p>
+
+<p>
+    Example:
+</p>
+
+<pre>
+<code>
+/Product/Details/5
+</code>
+</pre>
+
+<p>
+    MVC passes:
+</p>
+
+<pre>
+<code>
+id = 5
+</code>
+</pre>
+
+<hr />
+
+<h2>Full Practical Example</h2>
+
+<h3>Step 1 — Create Controller</h3>
+
+<pre>
+<code>
+public class ProductController : Controller
+{
+    public IActionResult Index()
+    {
+        return Content("Product Index");
+    }
+
+    public IActionResult Details(int id)
+    {
+        return Content($"Product Id: {id}");
+    }
+}
+</code>
+</pre>
+
+<hr />
+
+<h3>Step 2 — Configure Route</h3>
+
+<pre>
+<code>
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
+</code>
+</pre>
+
+<hr />
+
+<h3>Step 3 — Test URLs</h3>
+
+<p>
+    URL:
+</p>
+
+<pre>
+<code>
+/Product
+</code>
+</pre>
+
+<p>
+    Output:
+</p>
+
+<pre>
+<code>
+Product Index
+</code>
+</pre>
+
+<hr />
+
+<p>
+    URL:
+</p>
+
+<pre>
+<code>
+/Product/Details/5
+</code>
+</pre>
+
+<p>
+    Output:
+</p>
+
+<pre>
+<code>
+Product Id: 5
+</code>
+</pre>
+
+<hr />
+
+<h2>How Conventional Routing Works Internally</h2>
+
+<pre>
+<code>
+Browser Request
+        ↓
+Routing Middleware
+        ↓
+Controller Selection
+        ↓
+Action Selection
+        ↓
+Parameter Binding
+        ↓
+Action Executes
+        ↓
+Response Returned
+</code>
+</pre>
+
+<hr />
+
+<h2>Advantages of Conventional Routing</h2>
+
+<ul>
+    <li>Simple to configure</li>
+    <li>Centralized routing setup</li>
+    <li>Easy for MVC applications</li>
+    <li>Less repetitive code</li>
+</ul>
+
+<hr />
+
+<h2>Disadvantages of Conventional Routing</h2>
+
+<ul>
+    <li>Less flexible for custom URLs</li>
+    <li>Can become difficult in large APIs</li>
+    <li>Not ideal for highly customized routing</li>
+</ul>
+
+<hr />
+
+<h2>Conventional Routing vs Attribute Routing</h2>
+
+<table border="1" cellpadding="10">
+
+    <tr>
+        <th>Conventional Routing</th>
+        <th>Attribute Routing</th>
+    </tr>
+
+    <tr>
+        <td>Defined in Program.cs</td>
+        <td>Defined on Controllers/Actions</td>
+    </tr>
+
+    <tr>
+        <td>Centralized</td>
+        <td>Distributed</td>
+    </tr>
+
+    <tr>
+        <td>Best for MVC Apps</td>
+        <td>Best for APIs</td>
+    </tr>
+
+</table>
+
+<hr />
+
+<h2>Important Interview Points</h2>
+
+<ul>
+    <li>
+        Conventional routing follows predefined URL conventions.
+    </li>
+
+    <li>
+        Routes are configured using app.MapControllerRoute().
+    </li>
+
+    <li>
+        The default MVC route pattern is:
+        controller/action/id
+    </li>
+
+    <li>
+        {id?} represents an optional parameter.
+    </li>
+</ul>
+
+<hr />
+
+<h2>Final Conclusion</h2>
+
+<p>
+    Conventional Routing is a centralized routing approach in ASP.NET Core MVC
+    where URL patterns are configured inside Program.cs
+    to map requests to controllers and action methods.
+</p>

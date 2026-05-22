@@ -1,0 +1,419 @@
+﻿<h1>Attribute Routing in ASP.NET Core MVC</h1>
+
+<p>
+    Attribute Routing is a routing technique where routes are defined
+    directly on controllers and action methods using attributes.
+</p>
+
+<hr />
+
+<h2>Why Attribute Routing is Used?</h2>
+
+<p>
+    Attribute Routing provides more control and flexibility over URLs.
+</p>
+
+<p>
+    It is commonly used in:
+</p>
+
+<ul>
+    <li>Web APIs</li>
+    <li>REST APIs</li>
+    <li>Enterprise applications</li>
+    <li>Custom URL structures</li>
+</ul>
+
+<hr />
+
+<h2>Difference Between Conventional and Attribute Routing</h2>
+
+<table border="1" cellpadding="10">
+
+    <tr>
+        <th>Conventional Routing</th>
+        <th>Attribute Routing</th>
+    </tr>
+
+    <tr>
+        <td>Defined in Program.cs</td>
+        <td>Defined on Controllers/Actions</td>
+    </tr>
+
+    <tr>
+        <td>Centralized Routing</td>
+        <td>Distributed Routing</td>
+    </tr>
+
+    <tr>
+        <td>Less Flexible</td>
+        <td>More Flexible</td>
+    </tr>
+
+    <tr>
+        <td>Best for MVC Apps</td>
+        <td>Best for APIs</td>
+    </tr>
+
+</table>
+
+<hr />
+
+<h2>Basic Attribute Routing Example</h2>
+
+<pre>
+<code>
+[Route("products")]
+public class ProductController : Controller
+{
+}
+</code>
+</pre>
+
+<p>
+    This creates the route:
+</p>
+
+<pre>
+<code>
+/products
+</code>
+</pre>
+
+<hr />
+
+<h2>Action-Level Routing</h2>
+
+<p>
+    Routes can also be defined directly on action methods.
+</p>
+
+<pre>
+<code>
+[Route("products")]
+public class ProductController : Controller
+{
+    [Route("all")]
+    public IActionResult GetAll()
+    {
+        return Content("All Products");
+    }
+}
+</code>
+</pre>
+
+<p>
+    Final URL:
+</p>
+
+<pre>
+<code>
+/products/all
+</code>
+</pre>
+
+<hr />
+
+<h2>How Controller and Action Routes Combine</h2>
+
+<p>
+    ASP.NET Core combines:
+</p>
+
+<ul>
+    <li>Controller route</li>
+    <li>Action route</li>
+</ul>
+
+<p>
+    Example:
+</p>
+
+<pre>
+<code>
+[Route("students")]
+public class StudentController : Controller
+{
+    [Route("details")]
+    public IActionResult Details()
+    {
+        return View();
+    }
+}
+</code>
+</pre>
+
+<p>
+    Final route becomes:
+</p>
+
+<pre>
+<code>
+/students/details
+</code>
+</pre>
+
+<hr />
+
+<h2>HTTP Method Attributes</h2>
+
+<p>
+    ASP.NET Core provides specialized routing attributes
+    for HTTP methods.
+</p>
+
+<hr />
+
+<h3>1. HttpGet</h3>
+
+<pre>
+<code>
+[HttpGet]
+public IActionResult Get()
+{
+    return Content("GET Request");
+}
+</code>
+</pre>
+
+<p>
+    Used to fetch data.
+</p>
+
+<hr />
+
+<h3>2. HttpPost</h3>
+
+<pre>
+<code>
+[HttpPost]
+public IActionResult Create()
+{
+    return Content("POST Request");
+}
+</code>
+</pre>
+
+<p>
+    Used to send or save data.
+</p>
+
+<hr />
+
+<h3>3. HttpPut</h3>
+
+<pre>
+<code>
+[HttpPut]
+public IActionResult Update()
+{
+    return Content("PUT Request");
+}
+</code>
+</pre>
+
+<p>
+    Used to update data.
+</p>
+
+<hr />
+
+<h3>4. HttpDelete</h3>
+
+<pre>
+<code>
+[HttpDelete]
+public IActionResult Delete()
+{
+    return Content("DELETE Request");
+}
+</code>
+</pre>
+
+<p>
+    Used to delete data.
+</p>
+
+<hr />
+
+<h2>Attribute Routing with Parameters</h2>
+
+<p>
+    Route parameters can also be used in attribute routing.
+</p>
+
+<pre>
+<code>
+[HttpGet("{id}")]
+public IActionResult Details(int id)
+{
+    return Content($"Id: {id}");
+}
+</code>
+</pre>
+
+<p>
+    Example URL:
+</p>
+
+<pre>
+<code>
+/products/5
+</code>
+</pre>
+
+<hr />
+
+<h2>Route Constraints</h2>
+
+<p>
+    Attribute routing supports route constraints.
+</p>
+
+<pre>
+<code>
+[HttpGet("{id:int}")]
+</code>
+</pre>
+
+<p>
+    Here:
+</p>
+
+<ul>
+    <li>id must be an integer</li>
+    <li>Invalid values will not match the route</li>
+</ul>
+
+<hr />
+
+<h2>Token Replacement</h2>
+
+<p>
+    ASP.NET Core supports token replacement
+    using special keywords.
+</p>
+
+<pre>
+<code>
+[Route("[controller]")]
+</code>
+</pre>
+
+<p>
+    MVC automatically replaces:
+</p>
+
+<pre>
+<code>
+[controller]
+</code>
+</pre>
+
+<p>
+    with the controller name.
+</p>
+
+<hr />
+
+<h2>Example</h2>
+
+<pre>
+<code>
+[Route("[controller]")]
+public class ProductController : Controller
+{
+}
+</code>
+</pre>
+
+<p>
+    Final route:
+</p>
+
+<pre>
+<code>
+/Product
+</code>
+</pre>
+
+<hr />
+
+<h2>How Attribute Routing Works Internally</h2>
+
+<pre>
+<code>
+Incoming Request
+        ↓
+Routing Middleware
+        ↓
+Attribute Route Matching
+        ↓
+Controller Selection
+        ↓
+Action Selection
+        ↓
+Action Execution
+        ↓
+Response Returned
+</code>
+</pre>
+
+<hr />
+
+<h2>Advantages of Attribute Routing</h2>
+
+<ul>
+    <li>More flexible routing</li>
+    <li>Better control over URLs</li>
+    <li>Ideal for REST APIs</li>
+    <li>Easy to create custom routes</li>
+    <li>Supports route constraints easily</li>
+</ul>
+
+<hr />
+
+<h2>Disadvantages of Attribute Routing</h2>
+
+<ul>
+    <li>Routes become distributed across files</li>
+    <li>Large applications may become harder to manage</li>
+    <li>Can create route conflicts if not designed properly</li>
+</ul>
+
+<hr />
+
+<h2>Important Interview Points</h2>
+
+<ul>
+    <li>
+        Attribute Routing defines routes directly on controllers and actions.
+    </li>
+
+    <li>
+        It provides more flexibility compared to conventional routing.
+    </li>
+
+    <li>
+        Attribute Routing is heavily used in Web APIs.
+    </li>
+
+    <li>
+        HTTP method attributes like HttpGet and HttpPost
+        are part of attribute routing.
+    </li>
+
+    <li>
+        Route constraints help validate route values.
+    </li>
+</ul>
+
+<hr />
+
+<h2>Final Conclusion</h2>
+
+<p>
+    Attribute Routing is a flexible routing approach in ASP.NET Core
+    where routes are directly defined using attributes on controllers
+    and action methods.
+</p>

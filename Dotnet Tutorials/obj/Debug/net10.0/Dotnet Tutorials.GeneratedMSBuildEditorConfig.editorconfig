@@ -82,8 +82,36 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTVZDQmFzaWNzXENvbnRyb2xsZXJzQW5kQWN0aW9ucy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/MVCBasics/DependencyInjection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTVZDQmFzaWNzXERlcGVuZGVuY3lJbmplY3Rpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/MVCBasics/ImpQuestions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTVZDQmFzaWNzXEltcFF1ZXN0aW9ucy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/MVCBasics/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTVZDQmFzaWNzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/Routing/AttributeRouting.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm91dGluZ1xBdHRyaWJ1dGVSb3V0aW5nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/Routing/ConventionalRouting.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm91dGluZ1xDb252ZW50aW9uYWxSb3V0aW5nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/Routing/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm91dGluZ1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/Routing/RouteConstraints.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm91dGluZ1xSb3V0ZUNvbnN0cmFpbnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/Routing/RouteParameters.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm91dGluZ1xSb3V0ZVBhcmFtZXRlcnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/Shared/Error.cshtml]

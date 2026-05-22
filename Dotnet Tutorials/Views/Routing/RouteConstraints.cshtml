@@ -1,0 +1,444 @@
+﻿<h1>Route Constraints in ASP.NET Core MVC</h1>
+
+<p>
+    Route Constraints are used to restrict and validate
+    route parameter values in URLs.
+</p>
+
+<p>
+    They help ASP.NET Core determine whether
+    a route should match a request or not.
+</p>
+
+<hr />
+
+<h2>Why Route Constraints are Used?</h2>
+
+<p>
+    Route constraints help:
+</p>
+
+<ul>
+    <li>Prevent invalid URLs</li>
+    <li>Improve route matching</li>
+    <li>Validate route parameters</li>
+    <li>Create safer APIs</li>
+</ul>
+
+<hr />
+
+<h2>Basic Example Without Constraint</h2>
+
+<pre>
+<code>
+[HttpGet("{id}")]
+public IActionResult Details(int id)
+{
+    return Content($"Id: {id}");
+}
+</code>
+</pre>
+
+<p>
+    Problem:
+</p>
+
+<pre>
+<code>
+/products/abc
+</code>
+</pre>
+
+<p>
+    Here:
+</p>
+
+<pre>
+<code>
+abc cannot be converted to int
+</code>
+</pre>
+
+<p>
+    This may create model binding issues.
+</p>
+
+<hr />
+
+<h2>Using int Constraint</h2>
+
+<pre>
+<code>
+[HttpGet("{id:int}")]
+public IActionResult Details(int id)
+{
+    return Content($"Id: {id}");
+}
+</code>
+</pre>
+
+<p>
+    Now:
+</p>
+
+<pre>
+<code>
+/products/5
+</code>
+</pre>
+
+<p>
+    Valid
+</p>
+
+<pre>
+<code>
+/products/abc
+</code>
+</pre>
+
+<p>
+    Invalid
+</p>
+
+<hr />
+
+<h2>How int Constraint Works</h2>
+
+<p>
+    ASP.NET Core checks:
+</p>
+
+<pre>
+<code>
+Can route value be converted to integer?
+</code>
+</pre>
+
+<p>
+    If yes:
+</p>
+
+<ul>
+    <li>Route matches successfully</li>
+</ul>
+
+<p>
+    If no:
+</p>
+
+<ul>
+    <li>Route does not match</li>
+    <li>404 Not Found may occur</li>
+</ul>
+
+<hr />
+
+<h2>Common Route Constraints</h2>
+
+<table border="1" cellpadding="10">
+
+    <tr>
+        <th>Constraint</th>
+        <th>Description</th>
+    </tr>
+
+    <tr>
+        <td>int</td>
+        <td>Only integers allowed</td>
+    </tr>
+
+    <tr>
+        <td>guid</td>
+        <td>Only GUID values allowed</td>
+    </tr>
+
+    <tr>
+        <td>alpha</td>
+        <td>Only alphabets allowed</td>
+    </tr>
+
+    <tr>
+        <td>bool</td>
+        <td>Only true/false allowed</td>
+    </tr>
+
+    <tr>
+        <td>datetime</td>
+        <td>Only valid date values allowed</td>
+    </tr>
+
+</table>
+
+<hr />
+
+<h2>GUID Constraint Example</h2>
+
+<pre>
+<code>
+[HttpGet("{id:guid}")]
+public IActionResult Get(Guid id)
+{
+    return Content(id.ToString());
+}
+</code>
+</pre>
+
+<p>
+    Example valid URL:
+</p>
+
+<pre>
+<code>
+/products/2f1c4f67-8a2d-4b3c-91aa-2d9a4d5e8f33
+</code>
+</pre>
+
+<hr />
+
+<h2>Alpha Constraint Example</h2>
+
+<pre>
+<code>
+[HttpGet("{name:alpha}")]
+public IActionResult GetByName(string name)
+{
+    return Content(name);
+}
+</code>
+</pre>
+
+<p>
+    Valid:
+</p>
+
+<pre>
+<code>
+/products/iphone
+</code>
+</pre>
+
+<p>
+    Invalid:
+</p>
+
+<pre>
+<code>
+/products/iphone123
+</code>
+</pre>
+
+<hr />
+
+<h2>Minimum Length Constraint</h2>
+
+<pre>
+<code>
+[HttpGet("{name:minlength(3)}")]
+</code>
+</pre>
+
+<p>
+    Here:
+</p>
+
+<ul>
+    <li>Minimum 3 characters required</li>
+</ul>
+
+<hr />
+
+<h2>Maximum Length Constraint</h2>
+
+<pre>
+<code>
+[HttpGet("{name:maxlength(10)}")]
+</code>
+</pre>
+
+<p>
+    Here:
+</p>
+
+<ul>
+    <li>Maximum 10 characters allowed</li>
+</ul>
+
+<hr />
+
+<h2>Range Constraint</h2>
+
+<pre>
+<code>
+[HttpGet("{id:range(1,100)}")]
+</code>
+</pre>
+
+<p>
+    Only values between:
+</p>
+
+<pre>
+<code>
+1 to 100
+</code>
+</pre>
+
+<p>
+    are allowed.
+</p>
+
+<hr />
+
+<h2>Multiple Constraints</h2>
+
+<p>
+    Multiple constraints can be combined together.
+</p>
+
+<pre>
+<code>
+[HttpGet("{id:int:min(1)}")]
+</code>
+</pre>
+
+<p>
+    Here:
+</p>
+
+<ul>
+    <li>Value must be integer</li>
+    <li>Value must be greater than 0</li>
+</ul>
+
+<hr />
+
+<h2>Regex Constraint</h2>
+
+<p>
+    Route constraints also support regular expressions.
+</p>
+
+<pre>
+<code>
+[HttpGet("{code:regex(^[A-Z]{3}[0-9]{3}$)}")]
+</code>
+</pre>
+
+<p>
+    Valid Example:
+</p>
+
+<pre>
+<code>
+ABC123
+</code>
+</pre>
+
+<hr />
+
+<h2>How Route Constraints Work Internally</h2>
+
+<pre>
+<code>
+Incoming URL
+      ↓
+Routing Middleware
+      ↓
+Constraint Validation
+      ↓
+Route Match Success/Failure
+      ↓
+Action Execution
+</code>
+</pre>
+
+<hr />
+
+<h2>What Happens if Constraint Fails?</h2>
+
+<p>
+    If route value does not satisfy the constraint:
+</p>
+
+<ul>
+    <li>Route is ignored</li>
+    <li>Action method is not executed</li>
+    <li>404 Not Found may occur</li>
+</ul>
+
+<hr />
+
+<h2>Route Constraints vs Model Validation</h2>
+
+<table border="1" cellpadding="10">
+
+    <tr>
+        <th>Route Constraints</th>
+        <th>Model Validation</th>
+    </tr>
+
+    <tr>
+        <td>Validates URL route values</td>
+        <td>Validates model data</td>
+    </tr>
+
+    <tr>
+        <td>Runs during route matching</td>
+        <td>Runs after model binding</td>
+    </tr>
+
+    <tr>
+        <td>Prevents invalid route execution</td>
+        <td>Prevents invalid data processing</td>
+    </tr>
+
+</table>
+
+<hr />
+
+<h2>Advantages of Route Constraints</h2>
+
+<ul>
+    <li>Cleaner route matching</li>
+    <li>Safer APIs</li>
+    <li>Better URL validation</li>
+    <li>Reduces invalid requests</li>
+</ul>
+
+<hr />
+
+<h2>Important Interview Points</h2>
+
+<ul>
+    <li>
+        Route constraints validate URL parameters during route matching.
+    </li>
+
+    <li>
+        Constraints help prevent invalid routes from executing actions.
+    </li>
+
+    <li>
+        int, guid, alpha, minlength are common route constraints.
+    </li>
+
+    <li>
+        If constraint validation fails,
+        route matching fails.
+    </li>
+
+    <li>
+        Route constraints execute before model validation.
+    </li>
+</ul>
+
+<hr />
+
+<h2>Final Conclusion</h2>
+
+<p>
+    Route Constraints help ASP.NET Core MVC applications
+    validate and restrict route parameter values,
+    improving route safety and request handling.
+</p>

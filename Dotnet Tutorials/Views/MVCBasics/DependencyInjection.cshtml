@@ -1,0 +1,270 @@
+﻿<h1>Dependency Injection (DI) in ASP.NET Core</h1>
+
+<p>
+    Dependency Injection is a design pattern where a class does not create its dependencies itself.
+    Instead, dependencies are provided (injected) from outside.
+</p>
+
+<hr />
+
+<h2>Without DI (Bad Practice)</h2>
+
+<pre>
+<code>
+public class StudentController
+{
+    private StudentService _service = new StudentService();
+}
+</code>
+</pre>
+
+<p>
+    Problems:
+</p>
+
+<ul>
+    <li>Tight coupling</li>
+    <li>Hard to test</li>
+    <li>Difficult to maintain</li>
+    <li>Violates SOLID principles</li>
+</ul>
+
+<hr />
+
+<h2>With DI (Good Practice)</h2>
+
+<pre>
+<code>
+public class StudentController
+{
+    private readonly IStudentService _service;
+
+    public StudentController(IStudentService service)
+    {
+        _service = service;
+    }
+}
+</code>
+</pre>
+
+<p>
+    Benefits:
+</p>
+
+<ul>
+    <li>Loose coupling</li>
+    <li>Easy testing (mocking possible)</li>
+    <li>Better maintainability</li>
+    <li>Follows SOLID principles</li>
+</ul>
+
+<hr />
+
+<h2>Core Idea of DI</h2>
+
+<pre>
+<code>
+Without DI → Class creates object ❌
+With DI → Framework injects object ✔
+</code>
+</pre>
+
+<hr />
+
+<h2>DI Container</h2>
+
+<p>
+    ASP.NET Core has a built-in Dependency Injection container that:
+</p>
+
+<ul>
+    <li>Creates objects</li>
+    <li>Manages object lifetime</li>
+    <li>Injects dependencies automatically</li>
+</ul>
+
+<hr />
+
+<h2>Service Registration (Program.cs)</h2>
+
+<pre>
+<code>
+builder.Services.AddScoped<IStudentService, StudentService>();
+</code>
+</pre>
+
+<hr />
+
+<h2>Types of Service Lifetimes</h2>
+
+<h3>1. Transient</h3>
+
+<pre>
+<code>
+builder.Services.AddTransient<IStudentService, StudentService>();
+</code>
+</pre>
+
+<p>
+    A new object is created every time it is requested.
+</p>
+
+<p>
+    Use case: Lightweight stateless services
+</p>
+
+<hr />
+
+<h3>2. Scoped (Most Used)</h3>
+
+<pre>
+<code>
+builder.Services.AddScoped<IStudentService, StudentService>();
+</code>
+</pre>
+
+<p>
+    One object is created per HTTP request.
+</p>
+
+<p>
+    Use case: Business services, Repository pattern
+</p>
+
+<hr />
+
+<h3>3. Singleton</h3>
+
+<pre>
+<code>
+builder.Services.AddSingleton<IStudentService, StudentService>();
+</code>
+</pre>
+
+<p>
+    One object is created for the entire application lifetime.
+</p>
+
+<p>
+    Use case: Logging, caching, configuration services
+</p>
+
+<hr />
+
+<h2>Real Example (Repository Pattern Style)</h2>
+
+<h3>Step 1: Interface</h3>
+
+<pre>
+<code>
+public interface IStudentRepository
+{
+    List<string> GetStudents();
+}
+</code>
+</pre>
+
+<h3>Step 2: Implementation</h3>
+
+<pre>
+<code>
+public class StudentRepository : IStudentRepository
+{
+    public List<string> GetStudents()
+    {
+        return new List<string> { "A", "B", "C" };
+    }
+}
+</code>
+</pre>
+
+<h3>Step 3: Register Service</h3>
+
+<pre>
+<code>
+builder.Services.AddScoped<IStudentRepository, StudentRepository>();
+</code>
+</pre>
+
+<h3>Step 4: Inject in Controller</h3>
+
+<pre>
+<code>
+public class StudentController : Controller
+{
+    private readonly IStudentRepository _repo;
+
+    public StudentController(IStudentRepository repo)
+    {
+        _repo = repo;
+    }
+
+    public IActionResult Index()
+    {
+        var data = _repo.GetStudents();
+        return View(data);
+    }
+}
+</code>
+</pre>
+
+<hr />
+
+<h2>Internal Working of DI</h2>
+
+<pre>
+<code>
+Request comes
+    ↓
+DI container checks required services
+    ↓
+Creates objects
+    ↓
+Injects into controller
+    ↓
+Controller executes
+</code>
+</pre>
+
+<hr />
+
+<h2>Where DI is Used in ASP.NET Core</h2>
+
+<ul>
+    <li>Controllers</li>
+    <li>Middleware</li>
+    <li>Filters</li>
+    <li>Repositories</li>
+    <li>Services</li>
+</ul>
+
+<hr />
+
+<h2>DI in Middleware Example</h2>
+
+<pre>
+<code>
+public class MyMiddleware
+{
+    private readonly RequestDelegate _next;
+    private readonly ILogger<MyMiddleware> _logger;
+
+    public MyMiddleware(RequestDelegate next, ILogger<MyMiddleware> logger)
+    {
+        _next = next;
+        _logger = logger;
+    }
+}
+</code>
+</pre>
+
+<hr />
+
+<h2>Interview Points</h2>
+
+<ul>
+    <li>Dependency Injection is used to achieve loose coupling</li>
+    <li>It removes responsibility of object creation from the class</li>
+    <li>ASP.NET Core has built-in DI container</li>
+    <li>3 lifetimes: Transient, Scoped, Singleton</li>
+</ul>

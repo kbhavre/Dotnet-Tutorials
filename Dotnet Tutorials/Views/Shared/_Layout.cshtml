@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Dotnet_Tutorials.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/faq.css" />
 </head>
 
 <body>
@@ -49,46 +50,33 @@
                     <!-- Home -->
 
                     <li class="nav-item dropdown">
-
-                        <a class="nav-link dropdown-toggle"
-                               href="#"
-                               role="button">
-
-                            Home
-
-                        </a>
-
+                        <a class="nav-link dropdown-toggle" href="#" role="button">Home</a>
                         <ul class="dropdown-menu">
-
-                            <li>
-                                <a class="dropdown-item"
-                                       asp-controller="Home"
-                                       asp-action="Index">
-
-                                    Dashboard
-
-                                </a>
-                            </li>
-
-                            <li>
-                                <a class="dropdown-item"
-                                       asp-controller="Home"
-                                       asp-action="Privacy">
-
-                                    Privacy
-
-                                </a>
-                            </li>
-
+                            <li><a class="dropdown-item" asp-controller="Home" asp-action="Index">Dashboard</a> </li>
                         </ul>
-
                     </li>
 
+                    <!-- MVC Basics -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button">MVC Basics</a>
                         <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" asp-controller="MVCBasics" asp-action="ImpQuestions">Important Questions</a></li>
                             <li><a class="dropdown-item" asp-controller="MVCBasics" asp-action="Index">Introduction</a></li>
                             <li><a class="dropdown-item" asp-controller="MVCBasics" asp-action="ControllersAndActions">Controllers and Actions</a></li>
+                            <li><a class="dropdown-item" asp-controller="MVCBasics" asp-action="DependencyInjection">Dependency Injection</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Routing -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button">Routing</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" asp-controller="Routing" asp-action="Index">Introduction</a></li>
+                            <li><a class="dropdown-item" asp-controller="Routing" asp-action="ConventionalRouting">Conventional Routing</a></li>
+                            <li><a class="dropdown-item" asp-controller="Routing" asp-action="AttributeRouting">Attribute Routing</a></li>
+                            <li><a class="dropdown-item" asp-controller="Routing" asp-action="RouteParameters">Route Parameters</a></li>
+                            <li><a class="dropdown-item" asp-controller="Routing" asp-action="RouteConstraints">Route Constraints</a></li>
+                            
                         </ul>
                     </li>
 
@@ -99,9 +87,7 @@
                         <a class="nav-link dropdown-toggle"
                                href="#"
                                role="button">
-
                             Middlewares
-
                         </a>
 
                         <ul class="dropdown-menu">
@@ -269,6 +255,7 @@
     </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/faq.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
     @await RenderSectionAsync("Scripts", required: false)

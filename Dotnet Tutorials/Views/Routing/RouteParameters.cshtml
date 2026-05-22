@@ -1,0 +1,391 @@
+﻿<h1>Route Parameters in ASP.NET Core MVC</h1>
+
+<p>
+    Route parameters are dynamic values passed through the URL
+    and automatically mapped to action method parameters.
+</p>
+
+<hr />
+
+<h2>Why Route Parameters are Used?</h2>
+
+<p>
+    Route parameters are commonly used to send:
+</p>
+
+<ul>
+    <li>ID values</li>
+    <li>Category names</li>
+    <li>Usernames</li>
+    <li>Product names</li>
+</ul>
+
+<p>
+    They help create clean and readable URLs.
+</p>
+
+<hr />
+
+<h2>Basic Route Parameter Example</h2>
+
+<pre>
+<code>
+/Product/Details/5
+</code>
+</pre>
+
+<p>
+    Here:
+</p>
+
+<ul>
+    <li>Product → Controller</li>
+    <li>Details → Action</li>
+    <li>5 → Route Parameter</li>
+</ul>
+
+<hr />
+
+<h2>Action Method Example</h2>
+
+<pre>
+<code>
+public class ProductController : Controller
+{
+    public IActionResult Details(int id)
+    {
+        return Content($"Product Id: {id}");
+    }
+}
+</code>
+</pre>
+
+<p>
+    MVC automatically binds:
+</p>
+
+<pre>
+<code>
+id = 5
+</code>
+</pre>
+
+<hr />
+
+<h2>Route Pattern with Parameters</h2>
+
+<pre>
+<code>
+{controller=Home}/{action=Index}/{id?}
+</code>
+</pre>
+
+<p>
+    The parameter:
+</p>
+
+<pre>
+<code>
+{id?}
+</code>
+</pre>
+
+<p>
+    represents an optional route parameter.
+</p>
+
+<hr />
+
+<h2>Optional Route Parameters</h2>
+
+<p>
+    The <strong>?</strong> symbol makes the parameter optional.
+</p>
+
+<pre>
+<code>
+{id?}
+</code>
+</pre>
+
+<p>
+    This means the URL can work with or without the parameter.
+</p>
+
+<hr />
+
+<h2>Example</h2>
+
+<pre>
+<code>
+/Product/Details
+</code>
+</pre>
+
+<p>
+    OR
+</p>
+
+<pre>
+<code>
+/Product/Details/10
+</code>
+</pre>
+
+<p>
+    Both URLs are valid because id is optional.
+</p>
+
+<hr />
+
+<h2>Required Route Parameters</h2>
+
+<p>
+    If <strong>?</strong> is removed,
+    the parameter becomes mandatory.
+</p>
+
+<pre>
+<code>
+{controller=Home}/{action=Index}/{id}
+</code>
+</pre>
+
+<p>
+    Now the URL must contain the id value.
+</p>
+
+<hr />
+
+<h2>Example</h2>
+
+<pre>
+<code>
+/Product/Details/5
+</code>
+</pre>
+
+<p>
+    Valid
+</p>
+
+<pre>
+<code>
+/Product/Details
+</code>
+</pre>
+
+<p>
+    Invalid
+</p>
+
+<hr />
+
+<h2>Multiple Route Parameters</h2>
+
+<p>
+    MVC also supports multiple parameters.
+</p>
+
+<pre>
+<code>
+pattern: "{controller=Home}/{action=Index}/{id?}/{name?}"
+</code>
+</pre>
+
+<p>
+    Example:
+</p>
+
+<pre>
+<code>
+/Product/Details/5/Iphone
+</code>
+</pre>
+
+<hr />
+
+<h2>Action Method Example</h2>
+
+<pre>
+<code>
+public IActionResult Details(int id, string name)
+{
+    return Content($"Id: {id}, Name: {name}");
+}
+</code>
+</pre>
+
+<hr />
+
+<h2>Default Parameter Values</h2>
+
+<p>
+    Route parameters can also have default values.
+</p>
+
+<pre>
+<code>
+pattern: "{controller=Home}/{action=Index}/{id=1}"
+</code>
+</pre>
+
+<p>
+    If id is not provided:
+</p>
+
+<pre>
+<code>
+id = 1
+</code>
+</pre>
+
+<p>
+    is automatically used.
+</p>
+
+<hr />
+
+<h2>Route Parameters vs Query Strings</h2>
+
+<table border="1" cellpadding="10">
+
+    <tr>
+        <th>Route Parameters</th>
+        <th>Query Strings</th>
+    </tr>
+
+    <tr>
+        <td>/Product/Details/5</td>
+        <td>/Product/Details?id=5</td>
+    </tr>
+
+    <tr>
+        <td>Cleaner URLs</td>
+        <td>Less readable URLs</td>
+    </tr>
+
+    <tr>
+        <td>Preferred for resource IDs</td>
+        <td>Preferred for filtering/searching</td>
+    </tr>
+
+</table>
+
+<hr />
+
+<h2>How Route Parameters Work Internally</h2>
+
+<pre>
+<code>
+Incoming URL
+      ↓
+Routing Middleware
+      ↓
+Extract Route Values
+      ↓
+Bind Values to Action Parameters
+      ↓
+Execute Action Method
+</code>
+</pre>
+
+<hr />
+
+<h2>Parameter Type Conversion</h2>
+
+<p>
+    ASP.NET Core automatically converts route values
+    to action method parameter types.
+</p>
+
+<pre>
+<code>
+public IActionResult Details(int id)
+</code>
+</pre>
+
+<p>
+    Here:
+</p>
+
+<pre>
+<code>
+"5" → converted to int
+</code>
+</pre>
+
+<hr />
+
+<h2>What Happens if Type Conversion Fails?</h2>
+
+<p>
+    If MVC cannot convert the route value,
+    model binding fails.
+</p>
+
+<p>
+    Example:
+</p>
+
+<pre>
+<code>
+/Product/Details/abc
+</code>
+</pre>
+
+<p>
+    when action expects:
+</p>
+
+<pre>
+<code>
+int id
+</code>
+</pre>
+
+<p>
+    This may result in:
+</p>
+
+<ul>
+    <li>Validation errors</li>
+    <li>404 responses</li>
+    <li>Bad Request responses</li>
+</ul>
+
+<hr />
+
+<h2>Important Interview Points</h2>
+
+<ul>
+    <li>
+        Route parameters are dynamic values passed through the URL.
+    </li>
+
+    <li>
+        MVC automatically binds route values to action method parameters.
+    </li>
+
+    <li>
+        {id?} represents an optional parameter.
+    </li>
+
+    <li>
+        Route parameters create cleaner and SEO-friendly URLs.
+    </li>
+
+    <li>
+        Query strings are generally used for filtering and searching.
+    </li>
+</ul>
+
+<hr />
+
+<h2>Final Conclusion</h2>
+
+<p>
+    Route parameters allow ASP.NET Core MVC applications
+    to pass dynamic values through URLs and automatically bind them
+    to controller action methods.
+</p>

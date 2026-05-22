@@ -1,0 +1,221 @@
+﻿<div class="faq-item">
+
+    <div class="faq-header" onclick="toggleFaq(this)">
+
+        <div class="faq-title">
+            Q.1 Why should DbContext not be Singleton in ASP.NET Core?
+        </div>
+
+        <div class="faq-action">
+
+            <div class="view-btn">
+                View Answer
+            </div>
+
+            <div class="arrow">
+                ▼
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="faq-answer">
+
+        <h2>What is DbContext?</h2>
+
+        <p>
+            DbContext is the main class used to communicate with the database
+            in Entity Framework Core.
+        </p>
+
+        <p>
+            It is responsible for:
+        </p>
+
+        <ul>
+            <li>Executing database queries</li>
+            <li>Tracking entity changes</li>
+            <li>Saving data into database</li>
+            <li>Managing database connections</li>
+        </ul>
+
+        <hr />
+
+        <h2>Incorrect Registration</h2>
+
+        <p>
+            Registering DbContext as Singleton is considered a bad practice.
+        </p>
+
+        <pre>
+<code>
+builder.Services.AddSingleton<ApplicationDbContext>();
+</code>
+</pre>
+
+        <p>
+            Singleton creates only one object for the entire application lifetime.
+        </p>
+
+        <p>
+            This means:
+        </p>
+
+        <pre>
+<code>
+All users share the SAME DbContext instance.
+</code>
+</pre>
+
+        <hr />
+
+        <h2>Why is this Dangerous?</h2>
+
+        <p>
+            DbContext is NOT thread-safe.
+        </p>
+
+        <p>
+            Multiple requests using the same DbContext object
+            can create serious application issues.
+        </p>
+
+        <p>
+            Problems may include:
+        </p>
+
+        <ul>
+            <li>Concurrency issues</li>
+            <li>Incorrect data updates</li>
+            <li>Tracking conflicts</li>
+            <li>Memory leaks</li>
+            <li>Unexpected application behavior</li>
+        </ul>
+
+        <hr />
+
+        <h2>Real World Example</h2>
+
+        <p>
+            Suppose two users are using the application simultaneously:
+        </p>
+
+        <ul>
+            <li>User A updates student data</li>
+            <li>User B deletes the same student data</li>
+        </ul>
+
+        <p>
+            Since both requests are sharing the same DbContext instance,
+            entity tracking may conflict internally.
+        </p>
+
+        <p>
+            This can result in:
+        </p>
+
+        <ul>
+            <li>Wrong data being saved</li>
+            <li>Concurrency exceptions</li>
+            <li>Application crashes</li>
+        </ul>
+
+        <hr />
+
+        <h2>Change Tracking Problem</h2>
+
+        <p>
+            DbContext internally tracks entities and their states.
+        </p>
+
+        <p>
+            Example:
+        </p>
+
+        <ul>
+            <li>Added</li>
+            <li>Modified</li>
+            <li>Deleted</li>
+        </ul>
+
+        <p>
+            If DbContext is Singleton,
+            old tracked entities remain in memory for a long time.
+        </p>
+
+        <p>
+            This increases memory usage and may cause stale data issues.
+        </p>
+
+        <hr />
+
+        <h2>Correct Approach</h2>
+
+        <p>
+            DbContext should always be registered as Scoped.
+        </p>
+
+        <pre>
+<code>
+builder.Services.AddScoped<ApplicationDbContext>();
+</code>
+</pre>
+
+        <p>
+            Scoped lifetime creates:
+        </p>
+
+        <pre>
+<code>
+One DbContext instance per HTTP request
+</code>
+</pre>
+
+        <p>
+            This keeps each request isolated and safe.
+        </p>
+
+        <hr />
+
+        <h2>Request Flow with Scoped DbContext</h2>
+
+        <pre>
+<code>
+Request Starts
+      ↓
+DI Container Creates DbContext
+      ↓
+Repository Uses DbContext
+      ↓
+Request Completes
+      ↓
+DbContext Gets Disposed
+</code>
+</pre>
+
+        <hr />
+
+        <h2>Important Interview Points</h2>
+
+        <ul>
+            <li>DbContext is not thread-safe</li>
+            <li>DbContext should never be Singleton</li>
+            <li>Scoped lifetime is recommended for DbContext</li>
+            <li>Each request should get separate DbContext instance</li>
+            <li>Singleton DbContext can cause concurrency and memory issues</li>
+        </ul>
+
+        <hr />
+
+        <h2>Final Conclusion</h2>
+
+        <p>
+            DbContext should always use Scoped lifetime because
+            it maintains internal tracking state and should not be shared
+            across multiple users and requests.
+        </p>
+
+    </div>
+
+</div>

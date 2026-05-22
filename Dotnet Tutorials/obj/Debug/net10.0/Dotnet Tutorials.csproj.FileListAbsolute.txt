@@ -97,3 +97,5 @@ D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\Dotnet Tu
 D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\ref\Dotnet Tutorials.dll
 D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\Dotnet Tutorials.sourcelink.json
 D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\zioio29g64-{0}-xoiaxbtt79-xoiaxbtt79.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\veig5636jq-{0}-repgq1n6q6-repgq1n6q6.gz
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\obj\Debug\net10.0\compressed\6xtoq0xukb-{0}-d0hsbptxbf-d0hsbptxbf.gz

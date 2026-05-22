@@ -1,5 +1,7 @@
+wwwroot\css\faq.css
 wwwroot\css\site.css
 wwwroot\favicon.ico
+wwwroot\js\faq.js
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
@@ -123,3 +125,5 @@ D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\wwwroot\lib\jquery\dist\jqu
 D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\wwwroot\lib\jquery\dist\jquery.slim.min.js
 D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\wwwroot\lib\jquery\dist\jquery.slim.min.map
 D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\wwwroot\lib\jquery\LICENSE.txt
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\wwwroot\js\faq.js
+D:\Learning\Dotnet\Dotnet Tutorials\Dotnet Tutorials\wwwroot\css\faq.css

@@ -1,0 +1,249 @@
+﻿<div class="topic-container">
+
+    <h1>checked and unchecked Keywords in C#</h1>
+
+    <p>
+        The <strong>checked</strong> and <strong>unchecked</strong> keywords in C#
+        are used to control overflow checking for numeric calculations.
+    </p>
+
+    <p>
+        They are mainly used with numeric data types like:
+    </p>
+
+    <ul>
+        <li>int</li>
+        <li>long</li>
+        <li>short</li>
+        <li>byte</li>
+    </ul>
+
+    <hr>
+
+    <h2>What is Overflow?</h2>
+
+    <p>
+        Overflow happens when a value exceeds the storage capacity of a data type.
+    </p>
+
+    <p>
+        Example:
+    </p>
+
+    <pre>
+byte num = 255;
+    </pre>
+
+    <p>
+        A <strong>byte</strong> can store values only from 0 to 255.
+    </p>
+
+    <p>
+        If we increase the value by 1:
+    </p>
+
+    <pre>
+num++;
+    </pre>
+
+    <p>
+        The value becomes 256 which is outside the range of byte.
+        This is called overflow.
+    </p>
+
+    <hr>
+
+    <h2>checked Keyword</h2>
+
+    <p>
+        The <strong>checked</strong> keyword forces C# to throw an exception if
+        overflow occurs during arithmetic operations or type conversions.
+    </p>
+
+    <h3>Example of checked</h3>
+
+    <pre>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        checked
+        {
+            byte num = 255;
+
+            num++;
+
+            Console.WriteLine(num);
+        }
+    }
+}
+    </pre>
+
+    <h3>Output</h3>
+
+    <pre>
+OverflowException
+    </pre>
+
+    <p>
+        Here:
+    </p>
+
+    <ul>
+        <li>255 + 1 becomes 256</li>
+        <li>byte cannot store 256</li>
+        <li><strong>checked</strong> detects overflow</li>
+        <li>Exception is thrown</li>
+    </ul>
+
+    <hr>
+
+    <h2>unchecked Keyword</h2>
+
+    <p>
+        The <strong>unchecked</strong> keyword ignores overflow checking.
+    </p>
+
+    <p>
+        Instead of throwing an exception, the value wraps around.
+    </p>
+
+    <h3>Example of unchecked</h3>
+
+    <pre>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        unchecked
+        {
+            byte num = 255;
+
+            num++;
+
+            Console.WriteLine(num);
+        }
+    }
+}
+    </pre>
+
+    <h3>Output</h3>
+
+    <pre>
+0
+    </pre>
+
+    <p>
+        Here:
+    </p>
+
+    <ul>
+        <li>byte maximum value is 255</li>
+        <li>After 255, value wraps around to 0</li>
+        <li>No exception is thrown</li>
+    </ul>
+
+    <hr>
+
+    <h2>Real-world Usage</h2>
+
+    <h3>checked</h3>
+
+    <p>
+        Used in applications where overflow can cause incorrect calculations.
+    </p>
+
+    <ul>
+        <li>Banking applications</li>
+        <li>Financial calculations</li>
+        <li>Tax systems</li>
+        <li>Scientific calculations</li>
+    </ul>
+
+    <h3>unchecked</h3>
+
+    <p>
+        Used in performance-critical applications where overflow checking is not required.
+    </p>
+
+    <ul>
+        <li>Game development</li>
+        <li>Graphics programming</li>
+        <li>Low-level system operations</li>
+    </ul>
+
+    <hr>
+
+    <h2>Expression Syntax</h2>
+
+    <h3>checked Expression</h3>
+
+    <pre>
+int result = checked(a + b);
+    </pre>
+
+    <h3>unchecked Expression</h3>
+
+    <pre>
+int result = unchecked(a + b);
+    </pre>
+
+    <hr>
+
+    <h2>Difference Between checked and unchecked</h2>
+
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>checked</th>
+            <th>unchecked</th>
+        </tr>
+
+        <tr>
+            <td>Detects overflow</td>
+            <td>Ignores overflow</td>
+        </tr>
+
+        <tr>
+            <td>Throws exception</td>
+            <td>No exception</td>
+        </tr>
+
+        <tr>
+            <td>Safer</td>
+            <td>Faster</td>
+        </tr>
+
+        <tr>
+            <td>Used in financial systems</td>
+            <td>Used in performance-critical applications</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h2>Important Points</h2>
+
+    <ul>
+        <li><strong>checked</strong> enables overflow checking.</li>
+        <li><strong>unchecked</strong> disables overflow checking.</li>
+        <li>Used only with numeric calculations and conversions.</li>
+        <li>Overflow mostly occurs with small-range data types like byte and short.</li>
+        <li>Can be used as blocks or expressions.</li>
+    </ul>
+
+    <hr>
+
+    <h2>Interview Definition</h2>
+
+    <p>
+        The <strong>checked</strong> keyword in C# is used to enable overflow checking
+        for numeric operations and throws an exception if overflow occurs.
+        The <strong>unchecked</strong> keyword disables overflow checking and allows
+        values to wrap around without throwing exceptions.
+    </p>
+
+</div>

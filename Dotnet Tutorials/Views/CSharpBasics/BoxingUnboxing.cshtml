@@ -1,0 +1,291 @@
+﻿<div class="topic-container">
+
+    <h1>Boxing and Unboxing in C#</h1>
+
+    <p>
+        Boxing and Unboxing in C# are used to convert value types into reference
+        types and reference types back into value types.
+    </p>
+
+    <p>
+        This mainly happens between:
+    </p>
+
+    <ul>
+        <li>Value types (int, char, bool, struct, etc.)</li>
+        <li>Reference type (object)</li>
+    </ul>
+
+    <p>
+        In C#:
+    </p>
+
+    <ul>
+        <li>Value types are generally stored in stack memory.</li>
+        <li>Reference types are stored in heap memory.</li>
+    </ul>
+
+    <hr>
+
+    <h2>Boxing</h2>
+
+    <p>
+        Boxing is the process of converting a value type into a reference type.
+    </p>
+
+    <p>
+        During boxing:
+    </p>
+
+    <ul>
+        <li>The value is copied from stack to heap memory.</li>
+        <li>An object is created in heap memory.</li>
+    </ul>
+
+    <h3>Boxing Example</h3>
+
+    <pre>
+int num = 100;
+
+object obj = num;
+    </pre>
+
+    <p>
+        Here:
+    </p>
+
+    <ul>
+        <li><strong>num</strong> is a value type.</li>
+        <li>It gets converted into an <strong>object</strong> type.</li>
+        <li>This process is called Boxing.</li>
+    </ul>
+
+    <hr>
+
+    <h2>Memory Representation</h2>
+
+    <h3>Before Boxing</h3>
+
+    <pre>
+Stack:
+num = 100
+    </pre>
+
+    <h3>After Boxing</h3>
+
+    <pre>
+Stack:
+obj -----> Heap Object(100)
+    </pre>
+
+    <hr>
+
+    <h2>Unboxing</h2>
+
+    <p>
+        Unboxing is the process of converting a boxed object back into a value type.
+    </p>
+
+    <p>
+        During unboxing:
+    </p>
+
+    <ul>
+        <li>Data is extracted from the heap object.</li>
+        <li>The value is converted back into its original datatype.</li>
+    </ul>
+
+    <h3>Unboxing Example</h3>
+
+    <pre>
+object obj = 100;
+
+int num = (int)obj;
+    </pre>
+
+    <p>
+        Here:
+    </p>
+
+    <ul>
+        <li><strong>obj</strong> contains boxed integer value.</li>
+        <li>The value is extracted using explicit type casting.</li>
+        <li>This process is called Unboxing.</li>
+    </ul>
+
+    <hr>
+
+    <h2>Complete Example</h2>
+
+    <pre>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int number = 100;
+
+        // Boxing
+        object obj = number;
+
+        Console.WriteLine(obj);
+
+        // Unboxing
+        int value = (int)obj;
+
+        Console.WriteLine(value);
+    }
+}
+    </pre>
+
+    <h3>Output</h3>
+
+    <pre>
+100
+100
+    </pre>
+
+    <hr>
+
+    <h2>Real-world Example - ArrayList</h2>
+
+    <p>
+        Before Generics, collections like <strong>ArrayList</strong> stored values
+        as <strong>object</strong> type.
+    </p>
+
+    <pre>
+using System;
+using System.Collections;
+
+class Program
+{
+    static void Main()
+    {
+        ArrayList list = new ArrayList();
+
+        // Boxing
+        list.Add(10);
+        list.Add(true);
+        list.Add('A');
+
+        // Unboxing
+        int number = (int)list[0];
+
+        Console.WriteLine(number);
+    }
+}
+    </pre>
+
+    <h3>Output</h3>
+
+    <pre>
+10
+    </pre>
+
+    <p>
+        Here:
+    </p>
+
+    <ul>
+        <li>Values are automatically boxed when added to ArrayList.</li>
+        <li>Values are unboxed when retrieved using type casting.</li>
+    </ul>
+
+    <hr>
+
+    <h2>Why Boxing and Unboxing Matter?</h2>
+
+    <p>
+        Boxing and unboxing affect:
+    </p>
+
+    <ul>
+        <li>Performance</li>
+        <li>Memory usage</li>
+    </ul>
+
+    <p>
+        Boxing creates objects in heap memory which increases garbage collection.
+    </p>
+
+    <p>
+        Excessive boxing and unboxing can reduce application performance.
+    </p>
+
+    <hr>
+
+    <h2>Performance-friendly Alternative</h2>
+
+    <p>
+        Generics help avoid boxing and unboxing.
+    </p>
+
+    <h3>Bad Practice</h3>
+
+    <pre>
+ArrayList list = new ArrayList();
+    </pre>
+
+    <h3>Better Practice</h3>
+
+    <pre>
+List&lt;int&gt; list = new List&lt;int&gt;();
+    </pre>
+
+    <hr>
+
+    <h2>Difference Between Boxing and Unboxing</h2>
+
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>Boxing</th>
+            <th>Unboxing</th>
+        </tr>
+
+        <tr>
+            <td>Value type to reference type</td>
+            <td>Reference type to value type</td>
+        </tr>
+
+        <tr>
+            <td>Implicit conversion</td>
+            <td>Explicit conversion</td>
+        </tr>
+
+        <tr>
+            <td>Stored in heap memory</td>
+            <td>Extracted back to value type</td>
+        </tr>
+
+        <tr>
+            <td>Creates object</td>
+            <td>Requires type casting</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h2>Important Points</h2>
+
+    <ul>
+        <li>Boxing converts value type into object type.</li>
+        <li>Unboxing converts object type back into value type.</li>
+        <li>Boxing is implicit.</li>
+        <li>Unboxing requires explicit type casting.</li>
+        <li>Excessive boxing and unboxing reduce performance.</li>
+        <li>Generics help avoid boxing and unboxing.</li>
+    </ul>
+
+    <hr>
+
+    <h2>Interview Definition</h2>
+
+    <p>
+        Boxing in C# is the process of converting a value type into a reference
+        type (<strong>object</strong>). Unboxing is the process of converting the
+        boxed object back into its original value type using explicit type casting.
+    </p>
+
+</div>

@@ -1,0 +1,202 @@
+﻿<div class="topic-container">
+
+    <h1>Out Variable in C#</h1>
+
+    <p>
+        The <strong>out</strong> keyword in C# is used to pass arguments by reference.
+        It allows a method to return multiple values through method parameters.
+    </p>
+
+    <p>
+        The variable passed as an <strong>out</strong> parameter does not need to be
+        initialized before method call, but the called method must assign a value
+        before returning.
+    </p>
+
+    <hr>
+
+    <h2>Why Use out?</h2>
+
+    <p>
+        Normally a method can return only one value using the
+        <strong>return</strong> statement.
+    </p>
+
+    <p>
+        Using <strong>out</strong>, we can return multiple values from a method.
+    </p>
+
+    <hr>
+
+    <h2>Syntax</h2>
+
+    <pre>
+methodName(out variableName);
+    </pre>
+
+    <p>Method Definition:</p>
+
+    <pre>
+void methodName(out int number)
+{
+    number = 10;
+}
+    </pre>
+
+    <hr>
+
+    <h2>Basic Example</h2>
+
+    <pre>
+using System;
+
+class Program
+{
+    static void GetNumber(out int num)
+    {
+        num = 100;
+    }
+
+    static void Main()
+    {
+        int value;
+
+        GetNumber(out value);
+
+        Console.WriteLine(value);
+    }
+}
+    </pre>
+
+    <h3>Output</h3>
+
+    <pre>
+100
+    </pre>
+
+    <hr>
+
+    <h2>Returning Multiple Values Using out</h2>
+
+    <pre>
+using System;
+
+class Program
+{
+    static void GetValues(out int a, out int b)
+    {
+        a = 10;
+        b = 20;
+    }
+
+    static void Main()
+    {
+        int x, y;
+
+        GetValues(out x, out y);
+
+        Console.WriteLine("X = " + x);
+        Console.WriteLine("Y = " + y);
+    }
+}
+    </pre>
+
+    <h3>Output</h3>
+
+    <pre>
+X = 10
+Y = 20
+    </pre>
+
+    <hr>
+
+    <h2>Real-world Example - int.TryParse()</h2>
+
+    <p>
+        <strong>out</strong> is commonly used with <strong>TryParse()</strong>
+        methods for input validation.
+    </p>
+
+    <pre>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string number = "123";
+
+        bool result = int.TryParse(number, out int value);
+
+        Console.WriteLine(result);
+        Console.WriteLine(value);
+    }
+}
+    </pre>
+
+    <h3>Output</h3>
+
+    <pre>
+True
+123
+    </pre>
+
+    <p>
+        Here:
+    </p>
+
+    <ul>
+        <li><strong>TryParse()</strong> returns true or false.</li>
+        <li>The converted integer value is returned using <strong>out</strong>.</li>
+    </ul>
+
+    <hr>
+
+    <h2>Difference Between ref and out</h2>
+
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>ref</th>
+            <th>out</th>
+        </tr>
+
+        <tr>
+            <td>Variable must be initialized before passing</td>
+            <td>Initialization is not required</td>
+        </tr>
+
+        <tr>
+            <td>Used for existing values</td>
+            <td>Used for returning values</td>
+        </tr>
+
+        <tr>
+            <td>Method may or may not assign value</td>
+            <td>Method must assign value</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h2>Important Points</h2>
+
+    <ul>
+        <li><strong>out</strong> parameters must be assigned a value inside the method.</li>
+        <li>Variables passed with <strong>out</strong> do not require initialization before method call.</li>
+        <li>Used to return multiple values from a method.</li>
+        <li>Passed by reference.</li>
+        <li><strong>out</strong> keyword must be used in both method declaration and method call.</li>
+    </ul>
+
+    <hr>
+
+    <h2>Interview Definition</h2>
+
+    <p>
+        The <strong>out</strong> keyword in C# is used to pass arguments by reference
+        and allows a method to return multiple values. The variable passed as an
+        <strong>out</strong> parameter does not need to be initialized before method
+        call, but the called method must assign a value before returning.
+    </p>
+
+</div>

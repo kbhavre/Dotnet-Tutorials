@@ -1,0 +1,170 @@
+﻿<div class="topic-container">
+
+    <h1>ref Keyword in C#</h1>
+
+    <p>
+        The <strong>ref</strong> keyword in C# is used to pass arguments by reference.
+        It allows a method to modify the original value of a variable.
+    </p>
+
+    <p>
+        Unlike normal parameters, changes made to a <strong>ref</strong> parameter
+        inside the method directly affect the original variable.
+    </p>
+
+    <hr>
+
+    <h2>Why Use ref?</h2>
+
+    <p>
+        Normally method parameters are passed by value, which means a copy of the
+        variable is sent to the method.
+    </p>
+
+    <p>
+        Using <strong>ref</strong>, the actual variable reference is passed, so any
+        changes made inside the method are reflected outside the method as well.
+    </p>
+
+    <hr>
+
+    <h2>Syntax</h2>
+
+    <pre>
+methodName(ref variableName);
+    </pre>
+
+    <p>Method Definition:</p>
+
+    <pre>
+void methodName(ref int number)
+{
+    number = 50;
+}
+    </pre>
+
+    <hr>
+
+    <h2>Basic Example</h2>
+
+    <pre>
+using System;
+
+class Program
+{
+    static void ChangeValue(ref int num)
+    {
+        num = 100;
+    }
+
+    static void Main()
+    {
+        int value = 10;
+
+        Console.WriteLine("Before Method Call: " + value);
+
+        ChangeValue(ref value);
+
+        Console.WriteLine("After Method Call: " + value);
+    }
+}
+    </pre>
+
+    <h3>Output</h3>
+
+    <pre>
+Before Method Call: 10
+After Method Call: 100
+    </pre>
+
+    <hr>
+
+    <h2>Real-world Example - Updating Account Balance</h2>
+
+    <p>
+        The <strong>ref</strong> keyword can be used when we want to directly update
+        an existing value such as a bank account balance.
+    </p>
+
+    <pre>
+using System;
+
+class Program
+{
+    static void Deposit(ref decimal balance, decimal amount)
+    {
+        balance += amount;
+    }
+
+    static void Main()
+    {
+        decimal accountBalance = 5000;
+
+        Deposit(ref accountBalance, 2000);
+
+        Console.WriteLine("Updated Balance: " + accountBalance);
+    }
+}
+    </pre>
+
+    <h3>Output</h3>
+
+    <pre>
+Updated Balance: 7000
+    </pre>
+
+    <hr>
+
+    <h2>Difference Between ref and out</h2>
+
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>ref</th>
+            <th>out</th>
+        </tr>
+
+        <tr>
+            <td>Variable must be initialized before passing</td>
+            <td>Initialization is not required</td>
+        </tr>
+
+        <tr>
+            <td>Used for modifying existing values</td>
+            <td>Used for returning values</td>
+        </tr>
+
+        <tr>
+            <td>Method may or may not assign value</td>
+            <td>Method must assign value</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h2>Important Points</h2>
+
+
+
+    <ul>
+        <li><strong>ref</strong> parameters must be initialized before method call.</li>
+        <li>Changes made inside the method affect the original variable.</li>
+        <li>Passed by reference.</li>
+        <li><strong>ref</strong> keyword must be used in both method declaration and method call.</li>
+        <li>Useful when updating existing values.</li>
+        <li class="text-primary">
+                In C++, when a variable is passed using <strong>&amp;</strong>, the original
+                variable can be modified inside the function.
+        </liclas>
+    </ul>
+
+    <hr>
+
+    <h2>Interview Definition</h2>
+
+    <p>
+        The <strong>ref</strong> keyword in C# is used to pass arguments by reference,
+        allowing a method to modify the original value of a variable. The variable
+        must be initialized before passing it to the method.
+    </p>
+
+</div>

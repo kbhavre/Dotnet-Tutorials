@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "D:\\Learning\\Dotnet\\Dotnet Tutorials\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9264CCD3-99C9-B62C-DDA5-41366D042EFD}|Dotnet Tutorials\\Dotnet Tutorials.csproj|d:\\learning\\dotnet\\dotnet tutorials\\dotnet tutorials\\views\\csharpbasics\\gotostatement.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9264CCD3-99C9-B62C-DDA5-41366D042EFD}|Dotnet Tutorials\\Dotnet Tutorials.csproj|solutionrelative:dotnet tutorials\\views\\csharpbasics\\gotostatement.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{9264CCD3-99C9-B62C-DDA5-41366D042EFD}|Dotnet Tutorials\\Dotnet Tutorials.csproj|d:\\learning\\dotnet\\dotnet tutorials\\dotnet tutorials\\views\\csharpbasics\\boxingunboxing.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9264CCD3-99C9-B62C-DDA5-41366D042EFD}|Dotnet Tutorials\\Dotnet Tutorials.csproj|solutionrelative:dotnet tutorials\\views\\csharpbasics\\boxingunboxing.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9264CCD3-99C9-B62C-DDA5-41366D042EFD}|Dotnet Tutorials\\Dotnet Tutorials.csproj|d:\\learning\\dotnet\\dotnet tutorials\\dotnet tutorials\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -112,7 +112,7 @@
               "RelativeDocumentMoniker": "Dotnet Tutorials\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "D:\\Learning\\Dotnet\\Dotnet Tutorials\\Dotnet Tutorials\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Dotnet Tutorials\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAuwD8AAACAAAAAAAAAAA==",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAuwEMAAACEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-05-24T08:42:40.737Z",
               "IsPinned": true,
@@ -133,14 +133,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "GotoStatement.cshtml",
-              "DocumentMoniker": "D:\\Learning\\Dotnet\\Dotnet Tutorials\\Dotnet Tutorials\\Views\\CSharpBasics\\GotoStatement.cshtml",
-              "RelativeDocumentMoniker": "Dotnet Tutorials\\Views\\CSharpBasics\\GotoStatement.cshtml",
-              "ToolTip": "D:\\Learning\\Dotnet\\Dotnet Tutorials\\Dotnet Tutorials\\Views\\CSharpBasics\\GotoStatement.cshtml",
-              "RelativeToolTip": "Dotnet Tutorials\\Views\\CSharpBasics\\GotoStatement.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJIAAAABAAAAAAAAAA==",
+              "Title": "BoxingUnboxing.cshtml",
+              "DocumentMoniker": "D:\\Learning\\Dotnet\\Dotnet Tutorials\\Dotnet Tutorials\\Views\\CSharpBasics\\BoxingUnboxing.cshtml",
+              "RelativeDocumentMoniker": "Dotnet Tutorials\\Views\\CSharpBasics\\BoxingUnboxing.cshtml",
+              "ToolTip": "D:\\Learning\\Dotnet\\Dotnet Tutorials\\Dotnet Tutorials\\Views\\CSharpBasics\\BoxingUnboxing.cshtml",
+              "RelativeToolTip": "Dotnet Tutorials\\Views\\CSharpBasics\\BoxingUnboxing.cshtml",
+              "ViewState": "AgIAAAkBAAAAAAAAAAAAACIBAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-05-26T12:25:25.872Z",
+              "WhenOpened": "2026-05-26T17:17:08.159Z",
               "EditorCaption": ""
             },
             {
@@ -151,7 +151,7 @@
               "RelativeDocumentMoniker": "Dotnet Tutorials\\Controllers\\CSharpBasicsController.cs",
               "ToolTip": "D:\\Learning\\Dotnet\\Dotnet Tutorials\\Dotnet Tutorials\\Controllers\\CSharpBasicsController.cs",
               "RelativeToolTip": "Dotnet Tutorials\\Controllers\\CSharpBasicsController.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAAAsAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAAwB0AAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-26T12:24:05.228Z",
               "EditorCaption": ""
@@ -166,8 +166,7 @@
               "RelativeToolTip": "Dotnet Tutorials\\Views\\ShoppingCart\\Index.cshtml",
               "ViewState": "AgIAAC4AAAAAAAAAAADwvzwAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-05-25T13:18:04.301Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-25T13:18:04.301Z"
             },
             {
               "$type": "Document",
@@ -179,8 +178,7 @@
               "RelativeToolTip": "Dotnet Tutorials\\Controllers\\MpsedcExam\\ShoppingCartController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-25T13:16:10.237Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-25T13:16:10.237Z"
             },
             {
               "$type": "Document",
@@ -192,8 +190,7 @@
               "RelativeToolTip": "Dotnet Tutorials\\Models\\ShoppingCartModel.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAAA6wA8AAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-25T13:13:14.376Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-25T13:13:14.376Z"
             },
             {
               "$type": "Document",
@@ -205,8 +202,7 @@
               "RelativeToolTip": "Dotnet Tutorials\\Models\\ProductModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-25T13:12:59.399Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-25T13:12:59.399Z"
             },
             {
               "$type": "Document",
@@ -218,8 +214,7 @@
               "RelativeToolTip": "Dotnet Tutorials\\Views\\Attendance\\_ViewCode.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAH0AAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-05-25T13:06:50.731Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-25T13:06:50.731Z"
             },
             {
               "$type": "Document",
@@ -231,8 +226,7 @@
               "RelativeToolTip": "Dotnet Tutorials\\Views\\Attendance\\Index.cshtml",
               "ViewState": "AgIAADYAAAAAAAAAAAAWwDwAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-05-25T12:52:56.719Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-25T12:52:56.719Z"
             },
             {
               "$type": "Document",
@@ -244,8 +238,7 @@
               "RelativeToolTip": "Dotnet Tutorials\\Controllers\\MpsedcExam\\AttendanceController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-25T12:48:36.155Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-25T12:48:36.155Z"
             },
             {
               "$type": "Document",
@@ -257,8 +250,7 @@
               "RelativeToolTip": "Dotnet Tutorials\\Models\\AttendanceModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-25T12:45:58.598Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-25T12:45:58.598Z"
             },
             {
               "$type": "Document",
@@ -270,8 +262,7 @@
               "RelativeToolTip": "Dotnet Tutorials\\Views\\Employee\\Edit.cshtml",
               "ViewState": "AgIAADoAAAAAAAAAAAAkwFwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-05-25T07:53:53.403Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-25T07:53:53.403Z"
             },
             {
               "$type": "Document",
@@ -283,8 +274,7 @@
               "RelativeToolTip": "Dotnet Tutorials\\Views\\Employee\\Create.cshtml",
               "ViewState": "AgIAADcAAAAAAAAAAAAiwFkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-05-25T07:48:12.504Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-25T07:48:12.504Z"
             },
             {
               "$type": "Document",
@@ -296,8 +286,7 @@
               "RelativeToolTip": "Dotnet Tutorials\\Views\\Employee\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAIYAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-05-25T07:40:31.817Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-25T07:40:31.817Z"
             },
             {
               "$type": "Document",
@@ -309,8 +298,7 @@
               "RelativeToolTip": "Dotnet Tutorials\\Controllers\\MpsedcExam\\EmployeeController.cs",
               "ViewState": "AgIAAFUAAAAAAAAAAAAiwHcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-25T07:16:54.233Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-25T07:16:54.233Z"
             },
             {
               "$type": "Document",
@@ -322,8 +310,7 @@
               "RelativeToolTip": "Dotnet Tutorials\\Models\\EmployeeModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-25T07:14:11.732Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-25T07:14:11.732Z"
             },
             {
               "$type": "Document",
@@ -335,8 +322,7 @@
               "RelativeToolTip": "Dotnet Tutorials\\Views\\SimpleInterest\\Index.cshtml",
               "ViewState": "AgIAABUAAAAAAAAAAAAiwB8AAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-05-24T09:46:50.47Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-24T09:46:50.47Z"
             },
             {
               "$type": "Document",

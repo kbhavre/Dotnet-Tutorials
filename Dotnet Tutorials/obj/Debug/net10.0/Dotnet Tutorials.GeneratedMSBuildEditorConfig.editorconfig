@@ -38,8 +38,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yaXphdGlvbkZpbHRlclxEYXNoYm9hcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/CSharpBasics/BoxingUnboxing.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ1NoYXJwQmFzaWNzXEJveGluZ1VuYm94aW5nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/CSharpBasics/CheckUncheck.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ1NoYXJwQmFzaWNzXENoZWNrVW5jaGVjay5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/CSharpBasics/GotoStatement.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ1NoYXJwQmFzaWNzXEdvdG9TdGF0ZW1lbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/CSharpBasics/OutKeyword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ1NoYXJwQmFzaWNzXE91dEtleXdvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/CSharpBasics/RefKeyword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ1NoYXJwQmFzaWNzXFJlZktleXdvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/Employee/Create.cshtml]

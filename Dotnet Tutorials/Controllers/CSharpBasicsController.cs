@@ -13,5 +13,23 @@ namespace Dotnet_Tutorials.Controllers
         {
             return View();
         }
+
+        public IActionResult OutKeyword()
+        {
+            return View();
+        }
+
+        public IActionResult RefKeyword()
+        {
+            return View();
+        }
+        public IActionResult CheckUncheck()
+        {
+            return View();
+        }
+        public IActionResult BoxingUnboxing()
+        {
+            return View();
+        }
     }
 }

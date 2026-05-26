@@ -1,0 +1,48 @@
+﻿@{
+    var code = @"
+@@model Dotnet_Tutorials.Models.StudentModel
+
+@@{
+    ViewData[""Title""] = ""Student Result"";
+}
+
+<div class=""container mt-5"">
+
+    <div class=""card shadow p-4"">
+
+        <h2 class=""text-center mb-4"">
+            Student Result Calculator
+        </h2>
+
+        <form method=""post"">
+
+            <div class=""mb-3"">
+
+                <label class=""form-label"">
+                    Student Name
+                </label>
+
+                <input type=""text""
+                       asp-for=""Name""
+                       class=""form-control"" />
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+@@section Scripts
+{
+    @@{
+        await Html.RenderPartialAsync(""_ValidationScriptsPartial"");
+    }
+}
+";
+}
+
+<pre class=" p-3 rounded overflow-auto">
+@code
+</pre>

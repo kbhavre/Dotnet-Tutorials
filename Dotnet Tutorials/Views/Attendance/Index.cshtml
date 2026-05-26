@@ -1,0 +1,303 @@
+﻿@model Dotnet_Tutorials.Models.AttendanceModel
+
+@{
+    ViewData["Title"] = "Attendance Calculator";
+}
+
+<div class="container mt-5">
+
+    <!-- MAIN CARD -->
+
+    <div class="card shadow p-4">
+
+        <h2 class="text-center mb-4">
+            Attendance Calculator
+        </h2>
+
+        <form method="post">
+
+            <div class="mb-3">
+
+                <label class="form-label">
+                    Total Classes
+                </label>
+
+                <input type="number"
+                       asp-for="TotalClasses"
+                       class="form-control" />
+
+                <span asp-validation-for="TotalClasses"
+                      class="text-danger">
+                </span>
+
+            </div>
+
+            <div class="mb-3">
+
+                <label class="form-label">
+                    Attended Classes
+                </label>
+
+                <input type="number"
+                       asp-for="AttendedClasses"
+                       class="form-control" />
+
+                <span asp-validation-for="AttendedClasses"
+                      class="text-danger">
+                </span>
+
+            </div>
+
+            <button type="submit"
+                    class="btn btn-primary w-100">
+
+                Calculate Attendance
+
+            </button>
+
+        </form>
+
+        @if (Model != null &&
+       Model.AttendedPercentage > 0)
+        {
+            <div class="mt-4">
+
+                <h4 class="text-success">
+                    Attendance Result
+                </h4>
+
+                <table class="table table-bordered mt-3">
+
+                    <tr>
+
+                        <th>Total Classes</th>
+
+                        <td>@Model.TotalClasses</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <th>Attended Classes</th>
+
+                        <td>@Model.AttendedClasses</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <th>Attendance Percentage</th>
+
+                        <td>
+                            @Model.AttendedPercentage.ToString("0.00") %
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <th>Status</th>
+
+                        <td>@Model.Status</td>
+
+                    </tr>
+
+                </table>
+
+            </div>
+        }
+
+    </div>
+
+    <!-- SOURCE FILES SECTION -->
+
+    <hr class="my-5" />
+
+    <h3 class="text-center mb-4">
+        Project Source Files
+    </h3>
+
+    <div class="accordion" id="projectFilesAccordion">
+
+        <!-- MODEL -->
+
+        <div class="accordion-item">
+
+            <h2 class="accordion-header">
+
+                <button class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#modelCode">
+
+                    AttendanceModel.cs
+
+                </button>
+
+            </h2>
+
+            <div id="modelCode"
+                 class="accordion-collapse collapse"
+                 data-bs-parent="#projectFilesAccordion">
+
+                <div class="accordion-body">
+
+<pre class="border p-3 rounded overflow-auto bg-light"
+style="font-size:14px;">
+
+using System.ComponentModel.DataAnnotations;
+
+namespace Dotnet_Tutorials.Models
+{
+    public class AttendanceModel
+    {
+        [Required(ErrorMessage = "Total Classes is required")]
+        [Range(1, 1000,
+            ErrorMessage = "Total Classes must be greater than 0")]
+        public int TotalClasses { get; set; }
+
+        [Required(ErrorMessage = "Attended Classes is required")]
+        [Range(0, 1000,
+            ErrorMessage = "Attended Classes cannot be negative")]
+        public int AttendedClasses { get; set; }
+
+        public double AttendancePercentage { get; set; }
+
+        public string Status { get; set; } = string.Empty;
+    }
+}
+
+</pre>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- CONTROLLER -->
+
+        <div class="accordion-item">
+
+            <h2 class="accordion-header">
+
+                <button class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#controllerCode">
+
+                    AttendanceController.cs
+
+                </button>
+
+            </h2>
+
+            <div id="controllerCode"
+                 class="accordion-collapse collapse"
+                 data-bs-parent="#projectFilesAccordion">
+
+                <div class="accordion-body">
+
+<pre class="border p-3 rounded overflow-auto bg-light"
+style="font-size:14px;">
+
+using Dotnet_Tutorials.Models;
+using Microsoft.AspNetCore.Mvc;
+
+namespace Dotnet_Tutorials.Controllers.MpsedcExam
+{
+    public class AttendanceController : Controller
+    {
+        [HttpGet]
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Index(AttendanceModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            if (model.AttendedClasses > model.TotalClasses)
+            {
+                ModelState.AddModelError(
+                    "AttendedClasses",
+                    "Attended Classes cannot be greater than Total Classes");
+
+                return View(model);
+            }
+
+            model.AttendancePercentage =
+                (double)model.AttendedClasses
+                / model.TotalClasses * 100;
+
+            if (model.AttendancePercentage >= 75)
+            {
+                model.Status = "Eligible";
+            }
+            else
+            {
+                model.Status = "Not Eligible";
+            }
+
+            return View(model);
+        }
+    }
+}
+
+</pre>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- VIEW -->
+
+        <div class="accordion-item">
+
+            <h2 class="accordion-header">
+
+                <button class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#viewCode">
+
+                    Index.cshtml
+
+                </button>
+
+            </h2>
+
+            <div id="viewCode"
+                 class="accordion-collapse collapse"
+                 data-bs-parent="#projectFilesAccordion">
+
+                <div class="accordion-body">
+
+                    @await Html.PartialAsync("_ViewCode");
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+@section Scripts
+{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,126 @@
+﻿@{
+    var code = @"
+@@model Dotnet_Tutorials.Models.AttendanceModel
+
+@@{
+    ViewData[""Title""] = ""Attendance Calculator"";
+}
+
+<div class=""container mt-5"">
+
+    <div class=""card shadow p-4"">
+
+        <h2 class=""text-center mb-4"">
+            Attendance Calculator
+        </h2>
+
+        <form method=""post"">
+
+            <div class=""mb-3"">
+
+                <label class=""form-label"">
+                    Total Classes
+                </label>
+
+                <input type=""number""
+                       asp-for=""TotalClasses""
+                       class=""form-control"" />
+
+                <span asp-validation-for=""TotalClasses""
+                      class=""text-danger"">
+                </span>
+
+            </div>
+
+            <div class=""mb-3"">
+
+                <label class=""form-label"">
+                    Attended Classes
+                </label>
+
+                <input type=""number""
+                       asp-for=""AttendedClasses""
+                       class=""form-control"" />
+
+                <span asp-validation-for=""AttendedClasses""
+                      class=""text-danger"">
+                </span>
+
+            </div>
+
+            <button type=""submit""
+                    class=""btn btn-primary w-100"">
+
+                Calculate Attendance
+
+            </button>
+
+        </form>
+
+        @@if (Model != null &&
+           Model.AttendancePercentage > 0)
+        {
+            <div class=""mt-4"">
+
+                <h4 class=""text-success"">
+                    Attendance Result
+                </h4>
+
+                <table class=""table table-bordered mt-3"">
+
+                    <tr>
+
+                        <th>Total Classes</th>
+
+                        <td>@@Model.TotalClasses</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <th>Attended Classes</th>
+
+                        <td>@@Model.AttendedClasses</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <th>Attendance Percentage</th>
+
+                        <td>
+                            @@Model.AttendancePercentage.ToString(""0.00"") %
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <th>Status</th>
+
+                        <td>@@Model.Status</td>
+
+                    </tr>
+
+                </table>
+
+            </div>
+        }
+
+    </div>
+
+</div>
+
+@@section Scripts
+{
+    @@{
+        await Html.RenderPartialAsync(""_ValidationScriptsPartial"");
+    }
+}
+";
+}
+
+<pre class="border p-3 rounded overflow-auto bg-light"
+     style="font-size:14px;">
+@code
+</pre>

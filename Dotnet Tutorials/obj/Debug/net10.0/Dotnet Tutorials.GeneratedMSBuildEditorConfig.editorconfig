@@ -26,8 +26,32 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/Attendance/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0ZW5kYW5jZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/Attendance/_ViewCode.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0ZW5kYW5jZVxfVmlld0NvZGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/AuthorizationFilter/Dashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yaXphdGlvbkZpbHRlclxEYXNoYm9hcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/CSharpBasics/GotoStatement.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ1NoYXJwQmFzaWNzXEdvdG9TdGF0ZW1lbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/Employee/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/Employee/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/Employee/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/ExceptionFilter/Index.cshtml]
@@ -120,6 +144,22 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/ShoppingCart/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcHBpbmdDYXJ0XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/SimpleInterest/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2ltcGxlSW50ZXJlc3RcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/Student/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/Student/_ViewCode.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxfVmlld0NvZGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Learning/Dotnet/Dotnet Tutorials/Dotnet Tutorials/Views/ValidationFilter/Index.cshtml]

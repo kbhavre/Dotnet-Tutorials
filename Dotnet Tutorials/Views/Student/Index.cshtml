@@ -1,0 +1,322 @@
+﻿@model Dotnet_Tutorials.Models.StudentModel
+
+@{
+    ViewData["Title"] = "Student Result";
+}
+
+<div class="container mt-5">
+
+    <!-- MAIN CARD -->
+
+    <div class="card shadow p-4">
+
+        <h2 class="text-center mb-4">
+            Student Result Calculator
+        </h2>
+
+        <form method="post">
+
+            <div class="mb-3">
+
+                <label class="form-label">
+                    Student Name
+                </label>
+
+                <input type="text"
+                       asp-for="Name"
+                       class="form-control" />
+
+                <span asp-validation-for="Name"
+                      class="text-danger">
+                </span>
+
+            </div>
+
+            <div class="mb-3">
+
+                <label class="form-label">
+                    Subject 1 Marks
+                </label>
+
+                <input type="number"
+                       asp-for="Subject1"
+                       class="form-control" />
+
+                <span asp-validation-for="Subject1"
+                      class="text-danger">
+                </span>
+
+            </div>
+
+            <div class="mb-3">
+
+                <label class="form-label">
+                    Subject 2 Marks
+                </label>
+
+                <input type="number"
+                       asp-for="Subject2"
+                       class="form-control" />
+
+                <span asp-validation-for="Subject2"
+                      class="text-danger">
+                </span>
+
+            </div>
+
+            <div class="mb-3">
+
+                <label class="form-label">
+                    Subject 3 Marks
+                </label>
+
+                <input type="number"
+                       asp-for="Subject3"
+                       class="form-control" />
+
+                <span asp-validation-for="Subject3"
+                      class="text-danger">
+                </span>
+
+            </div>
+
+            <button type="submit"
+                    class="btn btn-primary w-100">
+
+                Calculate Result
+
+            </button>
+
+        </form>
+
+        @if (Model != null && Model.Total > 0)
+        {
+            <div class="mt-4">
+
+                <h4 class="text-success">
+                    Result
+                </h4>
+
+                <table class="table table-bordered mt-3">
+
+                    <tr>
+                        <th>Student Name</th>
+                        <td>@Model.Name</td>
+                    </tr>
+
+                    <tr>
+                        <th>Total Marks</th>
+                        <td>@Model.Total</td>
+                    </tr>
+
+                    <tr>
+                        <th>Percentage</th>
+                        <td>
+                            @Model.Percentage.ToString("0.00") %
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>Grade</th>
+                        <td>@Model.Grade</td>
+                    </tr>
+
+                </table>
+
+            </div>
+        }
+
+    </div>
+
+    <!-- SOURCE FILES SECTION -->
+
+    <hr class="my-5" />
+
+    <h3 class="text-center mb-4">
+        Project Source Files
+    </h3>
+
+    <div class="accordion" id="projectFilesAccordion">
+
+        <!-- MODEL -->
+
+        <div class="accordion-item">
+
+            <h2 class="accordion-header">
+
+                <button class="accordion-button"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#modelCode">
+
+                    StudentModel.cs
+
+                </button>
+
+            </h2>
+
+            <div id="modelCode"
+                 class="accordion-collapse collapse"
+                 data-bs-parent="#projectFilesAccordion">
+
+                <div class="accordion-body">
+
+<pre class=" p-3 rounded overflow-auto">
+
+using System.ComponentModel.DataAnnotations;
+
+namespace Dotnet_Tutorials.Models
+{
+    public class StudentModel
+    {
+        [Required(ErrorMessage = "Student Name is required")]
+        public string Name { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "Subject 1 marks are required")]
+        [Range(0, 100, ErrorMessage = "Marks must be between 0 and 100")]
+        public int Subject1 { get; set; }
+
+        [Required(ErrorMessage = "Subject 2 marks are required")]
+        [Range(0, 100, ErrorMessage = "Marks must be between 0 and 100")]
+        public int Subject2 { get; set; }
+
+        [Required(ErrorMessage = "Subject 3 marks are required")]
+        [Range(0, 100, ErrorMessage = "Marks must be between 0 and 100")]
+        public int Subject3 { get; set; }
+
+        public int Total { get; set; }
+
+        public double Percentage { get; set; }
+
+        public string Grade { get; set; } = string.Empty;
+    }
+}
+
+</pre>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- CONTROLLER -->
+
+        <div class="accordion-item">
+
+            <h2 class="accordion-header">
+
+                <button class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#controllerCode">
+
+                    StudentController.cs
+
+                </button>
+
+            </h2>
+
+            <div id="controllerCode"
+                 class="accordion-collapse collapse"
+                 data-bs-parent="#projectFilesAccordion">
+
+                <div class="accordion-body">
+
+<pre class=" p-3 rounded overflow-auto">
+
+using Dotnet_Tutorials.Models;
+using Microsoft.AspNetCore.Mvc;
+
+namespace Dotnet_Tutorials.Controllers.MpsedcExam
+{
+    public class StudentController : Controller
+    {
+        [HttpGet]
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Index(StudentModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            model.Total =
+                model.Subject1 +
+                model.Subject2 +
+                model.Subject3;
+
+            model.Percentage = model.Total / 3.0;
+
+            if (model.Percentage >= 90)
+                model.Grade = "A";
+            else if (model.Percentage >= 75)
+                model.Grade = "B";
+            else if (model.Percentage >= 60)
+                model.Grade = "C";
+            else
+                model.Grade = "Fail";
+
+            return View(model);
+        }
+    }
+}
+
+</pre>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- VIEW -->
+
+        <div class="accordion-item">
+
+            <h2 class="accordion-header">
+
+                <button class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#viewCode">
+
+                    Index.cshtml
+
+                </button>
+
+            </h2>
+
+            <div id="viewCode"
+                 class="accordion-collapse collapse"
+                 data-bs-parent="#projectFilesAccordion">
+
+                <div class="accordion-body">
+
+                    @await Html.PartialAsync("_ViewCode")
+
+                  
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+@section Scripts
+{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

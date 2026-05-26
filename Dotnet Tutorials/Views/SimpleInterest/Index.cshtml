@@ -1,0 +1,48 @@
+﻿@model Dotnet_Tutorials.Models.SimpleInterestModel
+
+@{
+    ViewData["Title"] = "Simple Interest Calculator";
+}
+
+
+<div class="container mt-5">
+    <div class="card shadow p-4">
+
+        <h2 class="text-center mb-4">
+            Student Result Calculator
+        </h2>
+
+        <form method="post"">
+            <div class="mb-3">
+                   <label class="form-label">Enter Principal</label>
+                   <input type="number" class="form-control" asp-for="Principal"/>
+            </div>
+            <div class="mb-3">
+                   <label class="form-label">Enter Rate</label>
+                   <input type="number" class="form-control" asp-for="Rate"/>
+            </div>
+            <div class="mb-3">
+                   <label class="form-label">Enter Time (In Years)</label>
+                   <input type="number" class="form-control" asp-for="Time"/>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Calculate Interest</button>
+        </form>
+
+         @if(Model != null && Model.Amount > 0 && Model.Interest > 0) 
+        {
+            <div class="mt-4">
+                <table class="table table-bordered mt-3">
+                    <tr>
+                        <th>Interest</th>
+                        <td>@Model.Interest</td>
+                    </tr>
+                    <tr>
+                        <th>Amount</th>
+                        <td>@Model.Amount</td>
+                    </tr>
+                </table>
+            </div>
+        }
+    </div>
+</div>

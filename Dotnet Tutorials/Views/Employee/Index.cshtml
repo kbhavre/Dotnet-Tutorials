@@ -1,0 +1,135 @@
+﻿@model List<Dotnet_Tutorials.Models.EmployeeModel>
+
+@{
+    ViewData["Title"] = "Employee List";
+}
+
+<div class="container mt-5">
+
+    <div class="card shadow p-4">
+
+        <div class="d-flex justify-content-between mb-3">
+
+            <h2>
+                Employee List
+            </h2>
+
+            <a asp-action="Create"
+                   class="btn btn-primary">
+
+                Add Employee
+
+            </a>
+
+        </div>
+
+        <!-- SEARCH -->
+
+        <form method="get" class="mb-3">
+
+            <div class="row">
+
+                <div class="col-md-10">
+
+                    <input type="text"
+                           name="searchText"
+                           value="@ViewBag.SearchText"
+                           class="form-control"
+                           placeholder="Search by Name or Department" />
+
+                </div>
+
+                <div class="col-md-2">
+
+                    <button type="submit"
+                            class="btn btn-dark w-100">
+
+                        Search
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </form>
+
+        <!-- TABLE -->
+
+        <table class="table table-bordered table-striped">
+
+            <thead class="table-dark">
+
+                <tr>
+
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Salary</th>
+                    <th>Actions</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                @if (Model.Count > 0)
+                {
+                    @foreach (var employee in Model)
+                    {
+                        <tr>
+
+                            <td>@employee.Id</td>
+
+                            <td>@employee.Name</td>
+
+                            <td>@employee.Department</td>
+
+                            <td>@employee.Salary</td>
+
+                            <td>
+
+                                <a asp-action="Edit"
+                                       asp-route-id="@employee.Id"
+                                       class="btn btn-warning btn-sm">
+
+                                    Edit
+
+                                </a>
+
+                                <a asp-action="Delete"
+                                       asp-route-id="@employee.Id"
+                                       class="btn btn-danger btn-sm"
+                                       onclick="return confirm('Are you sure?')">
+
+                                    Delete
+
+                                </a>
+
+                            </td>
+
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+
+                        <td colspan="5"
+                            class="text-center text-danger">
+
+                            No Employees Found
+
+                        </td>
+
+                    </tr>
+                }
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>

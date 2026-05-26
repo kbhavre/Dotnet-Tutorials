@@ -1,0 +1,166 @@
+﻿<div class="topic-container">
+    
+    <h1>Goto Statement in C#</h1>
+
+    <p>
+        The <strong>goto</strong> statement in C# is a jump statement used to transfer
+        program control directly to another labeled statement within the same method
+        or switch block.
+    </p>
+
+    <p>
+        It is mainly used in:
+    </p>
+
+    <ul>
+        <li>Switch statements</li>
+        <li>Exiting nested loops</li>
+        <li>Jumping to a specific label in the program</li>
+    </ul>
+
+    <p>
+        Excessive use of <strong>goto</strong> is not recommended because it can make
+        code difficult to read and maintain.
+    </p>
+
+    <hr>
+
+    <h2>Syntax</h2>
+
+    <pre>
+goto labelName;
+
+labelName:
+    // Code
+    </pre>
+
+    <hr>
+
+    <h2>Example 1 - Basic goto Statement</h2>
+
+    <pre>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Start");
+
+        goto SkipCode;
+
+        Console.WriteLine("This line will not execute");
+
+    SkipCode:
+        Console.WriteLine("Goto Statement Executed");
+    }
+}
+    </pre>
+
+    <h3>Output</h3>
+
+    <pre>
+Start
+Goto Statement Executed
+    </pre>
+
+    <hr>
+
+    <h2>Example 2 - goto with switch Statement</h2>
+
+    <pre>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int number = 1;
+
+        switch (number)
+        {
+            case 1:
+                Console.WriteLine("Case 1");
+                goto case 2;
+
+            case 2:
+                Console.WriteLine("Case 2");
+                break;
+
+            default:
+                Console.WriteLine("Invalid");
+                break;
+        }
+    }
+}
+    </pre>
+
+    <h3>Output</h3>
+
+    <pre>
+Case 1
+Case 2
+    </pre>
+
+    <hr>
+
+    <h2>Interview Question</h2>
+
+    <p>
+        <strong>Q.</strong> Print numbers from 1 to 10 without using loops.
+    </p>
+
+    <p>
+        We can solve this using the <strong>goto</strong> statement.
+    </p>
+
+    <pre>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int i = 1;
+
+    Start:
+
+        Console.WriteLine(i);
+        i++;
+
+        if (i <= 10)
+        {
+            goto Start;
+        }
+    }
+}
+    </pre>
+
+    <h3>Output</h3>
+
+    <pre>
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+    </pre>
+
+    <hr>
+
+    <h2>Important Points</h2>
+
+    <ul>
+        <li><strong>goto</strong> transfers control to a labeled statement.</li>
+        <li>Labels must exist within the same method.</li>
+        <li>Commonly used inside switch statements.</li>
+        <li>Overusing goto can reduce code readability.</li>
+        <li>Loops and methods are preferred over goto in most cases.</li>
+    </ul>
+
+</div>

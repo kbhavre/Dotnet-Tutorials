@@ -8,6 +8,14 @@ namespace Dotnet_Tutorials.Controllers
         {
             return View();
         }
+        public IActionResult TypesOfClasses()
+        {
+            return View();
+        }
+        public IActionResult TypesOfMethods()
+        {
+            return View();
+        }
 
         public IActionResult GotoStatement()
         {

@@ -1,0 +1,476 @@
+﻿<div class="accordion" id="methodTypesAccordion">
+
+    <!-- Normal Method -->
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingNormalMethod">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNormalMethod">
+                Normal Method in C#
+            </button>
+        </h2>
+
+        <div id="collapseNormalMethod" class="accordion-collapse collapse show" data-bs-parent="#methodTypesAccordion">
+            <div class="accordion-body">
+
+                <h3>Definition</h3>
+
+                <p>
+                    A normal method is a regular method inside a class used to perform specific tasks.
+                </p>
+
+                <hr>
+
+                <h3>Example</h3>
+
+                <pre>
+class Calculator
+{
+    public void Add()
+    {
+        Console.WriteLine("Add Method");
+    }
+}
+</pre>
+
+                <p>Usage:</p>
+
+                <pre>
+Calculator c = new Calculator();
+c.Add();
+</pre>
+
+                <hr>
+
+                <h3>Real-world Usage</h3>
+
+                <ul>
+                    <li>CRUD operations</li>
+                    <li>Business logic</li>
+                    <li>Service methods</li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Static Method -->
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingStaticMethod">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseStaticMethod">
+                Static Method in C#
+            </button>
+        </h2>
+
+        <div id="collapseStaticMethod" class="accordion-collapse collapse" data-bs-parent="#methodTypesAccordion">
+            <div class="accordion-body">
+
+                <h3>Definition</h3>
+
+                <p>
+                    A static method belongs to the class instead of the object and can be called without creating an object.
+                </p>
+
+                <hr>
+
+                <h3>Example</h3>
+
+                <pre>
+class MathHelper
+{
+    public static int Square(int x)
+    {
+        return x * x;
+    }
+}
+</pre>
+
+                <p>Usage:</p>
+
+                <pre>
+int result = MathHelper.Square(5);
+</pre>
+
+                <hr>
+
+                <h3>Real-world Usage</h3>
+
+                <ul>
+                    <li>Helper methods</li>
+                    <li>Utility classes</li>
+                    <li>Math operations</li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Instance Method -->
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingInstanceMethod">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstanceMethod">
+                Instance Method in C#
+            </button>
+        </h2>
+
+        <div id="collapseInstanceMethod" class="accordion-collapse collapse" data-bs-parent="#methodTypesAccordion">
+            <div class="accordion-body">
+
+                <h3>Definition</h3>
+
+                <p>
+                    An instance method requires object creation and works with object-specific data.
+                </p>
+
+                <hr>
+
+                <h3>Example</h3>
+
+                <pre>
+class Employee
+{
+    public void ShowName()
+    {
+        Console.WriteLine("Kunal");
+    }
+}
+</pre>
+
+                <p>Usage:</p>
+
+                <pre>
+Employee emp = new Employee();
+emp.ShowName();
+</pre>
+
+                <hr>
+
+                <h3>Real-world Usage</h3>
+
+                <ul>
+                    <li>Object-specific operations</li>
+                    <li>Entity methods</li>
+                    <li>Business models</li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Extension Method -->
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingExtensionMethod">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExtensionMethod">
+                Extension Method in C#
+            </button>
+        </h2>
+
+        <div id="collapseExtensionMethod" class="accordion-collapse collapse" data-bs-parent="#methodTypesAccordion">
+            <div class="accordion-body">
+
+                <h3>Definition</h3>
+
+                <p>
+                    Extension methods allow adding new functionality to existing classes without modifying their source code.
+                </p>
+
+                <hr>
+
+                <h3>Example</h3>
+
+                <pre>
+using System;
+
+static class StringExtension
+{
+    public static string ToUpperFirstLetter(this string text)
+    {
+        return char.ToUpper(text[0]) + text.Substring(1);
+    }
+}
+</pre>
+
+                <p>Usage:</p>
+
+                <pre>
+string name = "kunal";
+
+Console.WriteLine(name.ToUpperFirstLetter());
+</pre>
+
+                <hr>
+
+                <h3>Output</h3>
+
+                <pre>
+Kunal
+</pre>
+
+                <hr>
+
+                <h3>Real-world Usage</h3>
+
+                <ul>
+                    <li>LINQ methods</li>
+                    <li>ASP.NET Core helpers</li>
+                    <li>Custom utility libraries</li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Partial Method -->
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingPartialMethod">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePartialMethod">
+                Partial Method in C#
+            </button>
+        </h2>
+
+        <div id="collapsePartialMethod" class="accordion-collapse collapse" data-bs-parent="#methodTypesAccordion">
+            <div class="accordion-body">
+
+                <h3>Definition</h3>
+
+                <p>
+                    A partial method is declared inside a partial class and its implementation can be defined in another file.
+                </p>
+
+                <hr>
+
+                <h3>Example</h3>
+
+                <p>File 1:</p>
+
+                <pre>
+partial class Employee
+{
+    partial void ShowMessage();
+}
+</pre>
+
+                <p>File 2:</p>
+
+                <pre>
+partial class Employee
+{
+    partial void ShowMessage()
+    {
+        Console.WriteLine("Hello");
+    }
+}
+</pre>
+
+                <hr>
+
+                <h3>Real-world Usage</h3>
+
+                <ul>
+                    <li>Entity Framework</li>
+                    <li>Code generators</li>
+                    <li>Designer-generated files</li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Virtual Method -->
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingVirtualMethod">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseVirtualMethod">
+                Virtual Method in C#
+            </button>
+        </h2>
+
+        <div id="collapseVirtualMethod" class="accordion-collapse collapse" data-bs-parent="#methodTypesAccordion">
+            <div class="accordion-body">
+
+                <h3>Definition</h3>
+
+                <p>
+                    A virtual method allows derived classes to override its implementation.
+                </p>
+
+                <hr>
+
+                <h3>Example</h3>
+
+                <pre>
+class Animal
+{
+    public virtual void Sound()
+    {
+        Console.WriteLine("Animal Sound");
+    }
+}
+
+class Dog : Animal
+{
+    public override void Sound()
+    {
+        Console.WriteLine("Bark");
+    }
+}
+</pre>
+
+                <hr>
+
+                <h3>Real-world Usage</h3>
+
+                <ul>
+                    <li>Notification systems</li>
+                    <li>Payment gateways</li>
+                    <li>Customizable business logic</li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Abstract Method -->
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingAbstractMethod">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAbstractMethod">
+                Abstract Method in C#
+            </button>
+        </h2>
+
+        <div id="collapseAbstractMethod" class="accordion-collapse collapse" data-bs-parent="#methodTypesAccordion">
+            <div class="accordion-body">
+
+                <h3>Definition</h3>
+
+                <p>
+                    An abstract method is a method without implementation that must be overridden in derived classes.
+                </p>
+
+                <hr>
+
+                <h3>Example</h3>
+
+                <pre>
+abstract class Payment
+{
+    public abstract void ProcessPayment();
+}
+
+class UpiPayment : Payment
+{
+    public override void ProcessPayment()
+    {
+        Console.WriteLine("UPI Payment");
+    }
+}
+</pre>
+
+                <hr>
+
+                <h3>Real-world Usage</h3>
+
+                <ul>
+                    <li>Payment systems</li>
+                    <li>Authentication providers</li>
+                    <li>Notification services</li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Sealed Method -->
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingSealedMethod">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSealedMethod">
+                Sealed Method in C#
+            </button>
+        </h2>
+
+        <div id="collapseSealedMethod" class="accordion-collapse collapse" data-bs-parent="#methodTypesAccordion">
+            <div class="accordion-body">
+
+                <h3>Definition</h3>
+
+                <p>
+                    A sealed method prevents further overriding in derived classes.
+                </p>
+
+                <hr>
+
+                <h3>Example</h3>
+
+                <pre>
+class Animal
+{
+    public virtual void Sound()
+    {
+    }
+}
+
+class Dog : Animal
+{
+    public sealed override void Sound()
+    {
+    }
+}
+</pre>
+
+                <hr>
+
+                <h3>Real-world Usage</h3>
+
+                <ul>
+                    <li>Security logic</li>
+                    <li>Restricted framework behavior</li>
+                    <li>Critical business operations</li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Async Method -->
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingAsyncMethod">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAsyncMethod">
+                Async Method in C#
+            </button>
+        </h2>
+
+        <div id="collapseAsyncMethod" class="accordion-collapse collapse" data-bs-parent="#methodTypesAccordion">
+            <div class="accordion-body">
+
+                <h3>Definition</h3>
+
+                <p>
+                    Async methods are used for asynchronous programming and help avoid blocking the main thread.
+                </p>
+
+                <hr>
+
+                <h3>Example</h3>
+
+                <pre>
+public async Task GetData()
+{
+    await Task.Delay(1000);
+
+    Console.WriteLine("Data Loaded");
+}
+</pre>
+
+                <hr>
+
+                <h3>Real-world Usage</h3>
+
+                <ul>
+                    <li>API calls</li>
+                    <li>Database operations</li>
+                    <li>File handling</li>
+                    <li>Background processing</li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+</div>

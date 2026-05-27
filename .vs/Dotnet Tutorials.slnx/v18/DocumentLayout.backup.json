@@ -102,7 +102,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
@@ -119,19 +119,6 @@
               "EditorCaption": ""
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "BoxingUnboxing.cshtml",
-              "DocumentMoniker": "D:\\Learning\\Dotnet\\Dotnet Tutorials\\Dotnet Tutorials\\Views\\CSharpBasics\\BoxingUnboxing.cshtml",
-              "RelativeDocumentMoniker": "Dotnet Tutorials\\Views\\CSharpBasics\\BoxingUnboxing.cshtml",
-              "ToolTip": "D:\\Learning\\Dotnet\\Dotnet Tutorials\\Dotnet Tutorials\\Views\\CSharpBasics\\BoxingUnboxing.cshtml*",
-              "RelativeToolTip": "Dotnet Tutorials\\Views\\CSharpBasics\\BoxingUnboxing.cshtml*",
-              "ViewState": "AgIAAAgBAAAAAAAAAAAmwCIBAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-05-26T17:17:08.159Z",
-              "EditorCaption": ""
-            },
-            {
               "$type": "Bookmark",
               "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
@@ -145,12 +132,25 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BoxingUnboxing.cshtml",
+              "DocumentMoniker": "D:\\Learning\\Dotnet\\Dotnet Tutorials\\Dotnet Tutorials\\Views\\CSharpBasics\\BoxingUnboxing.cshtml",
+              "RelativeDocumentMoniker": "Dotnet Tutorials\\Views\\CSharpBasics\\BoxingUnboxing.cshtml",
+              "ToolTip": "D:\\Learning\\Dotnet\\Dotnet Tutorials\\Dotnet Tutorials\\Views\\CSharpBasics\\BoxingUnboxing.cshtml",
+              "RelativeToolTip": "Dotnet Tutorials\\Views\\CSharpBasics\\BoxingUnboxing.cshtml",
+              "ViewState": "AgIAAAkBAAAAAAAAAAAAACIBAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-26T17:17:08.159Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
               "Title": "CSharpBasicsController.cs",
               "DocumentMoniker": "D:\\Learning\\Dotnet\\Dotnet Tutorials\\Dotnet Tutorials\\Controllers\\CSharpBasicsController.cs",
               "RelativeDocumentMoniker": "Dotnet Tutorials\\Controllers\\CSharpBasicsController.cs",
-              "ToolTip": "D:\\Learning\\Dotnet\\Dotnet Tutorials\\Dotnet Tutorials\\Controllers\\CSharpBasicsController.cs*",
-              "RelativeToolTip": "Dotnet Tutorials\\Controllers\\CSharpBasicsController.cs*",
+              "ToolTip": "D:\\Learning\\Dotnet\\Dotnet Tutorials\\Dotnet Tutorials\\Controllers\\CSharpBasicsController.cs",
+              "RelativeToolTip": "Dotnet Tutorials\\Controllers\\CSharpBasicsController.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAAwB0AAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-26T12:24:05.228Z",

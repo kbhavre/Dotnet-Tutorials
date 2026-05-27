@@ -1,0 +1,312 @@
+﻿<div class="accordion" id="typesOfClassesAccordion">
+
+    <!-- Normal Class -->
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingNormal">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNormal">
+                Normal Class in C#
+            </button>
+        </h2>
+
+        <div id="collapseNormal" class="accordion-collapse collapse show" data-bs-parent="#typesOfClassesAccordion">
+            <div class="accordion-body">
+
+                <h3>Definition</h3>
+
+                <p>
+                    A normal class is a regular class used for creating objects.
+                </p>
+
+                <hr>
+
+                <h3>Example</h3>
+
+<pre>
+class Student
+{
+    public string Name;
+}
+</pre>
+
+                <p>Usage:</p>
+
+<pre>
+Student s = new Student();
+</pre>
+
+                <hr>
+
+                <h3>Features</h3>
+
+                <ul>
+                    <li>Objects can be created.</li>
+                    <li>Can contain fields, methods, properties and constructors.</li>
+                    <li>Most commonly used class type.</li>
+                </ul>
+
+                <hr>
+
+                <h3>Real-world Usage</h3>
+
+                <ul>
+                    <li>User</li>
+                    <li>Employee</li>
+                    <li>Product</li>
+                    <li>Customer</li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Static Class -->
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingStatic">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseStatic">
+                Static Class in C#
+            </button>
+        </h2>
+
+        <div id="collapseStatic" class="accordion-collapse collapse" data-bs-parent="#typesOfClassesAccordion">
+            <div class="accordion-body">
+
+                <h3>Definition</h3>
+
+                <p>
+                    A static class is a class that cannot be instantiated and contains only static members.
+                </p>
+
+                <hr>
+
+                <h3>Example</h3>
+
+<pre>
+static class MathHelper
+{
+    public static int Square(int num)
+    {
+        return num * num;
+    }
+}
+</pre>
+
+                <p>Usage:</p>
+
+<pre>
+int result = MathHelper.Square(5);
+</pre>
+
+                <hr>
+
+                <h3>Features</h3>
+
+                <ul>
+                    <li>Cannot create objects.</li>
+                    <li>All members must be static.</li>
+                    <li>Cannot contain instance members.</li>
+                    <li>Automatically sealed.</li>
+                </ul>
+
+                <hr>
+
+                <h3>Real-world Usage</h3>
+
+                <ul>
+                    <li>Helper classes</li>
+                    <li>Utility methods</li>
+                    <li>Extension methods</li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Abstract Class -->
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingAbstract">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAbstract">
+                Abstract Class in C#
+            </button>
+        </h2>
+
+        <div id="collapseAbstract" class="accordion-collapse collapse" data-bs-parent="#typesOfClassesAccordion">
+            <div class="accordion-body">
+
+                <h3>Definition</h3>
+
+                <p>
+                    An abstract class is a class that cannot be instantiated and is designed to be inherited by derived classes.
+                </p>
+
+                <hr>
+
+                <h3>Example</h3>
+
+<pre>
+abstract class Animal
+{
+    public abstract void Sound();
+}
+
+class Dog : Animal
+{
+    public override void Sound()
+    {
+        Console.WriteLine("Bark");
+    }
+}
+</pre>
+
+                <hr>
+
+                <h3>Features</h3>
+
+                <ul>
+                    <li>Cannot create objects.</li>
+                    <li>Can contain abstract and non-abstract methods.</li>
+                    <li>Child classes must implement abstract methods.</li>
+                </ul>
+
+                <hr>
+
+                <h3>Real-world Usage</h3>
+
+                <ul>
+                    <li>Payment systems</li>
+                    <li>Notification systems</li>
+                    <li>Employee hierarchy</li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Sealed Class -->
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingSealed">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSealed">
+                Sealed Class in C#
+            </button>
+        </h2>
+
+        <div id="collapseSealed" class="accordion-collapse collapse" data-bs-parent="#typesOfClassesAccordion">
+            <div class="accordion-body">
+
+                <h3>Definition</h3>
+
+                <p>
+                    A sealed class is a class that cannot be inherited by other classes.
+                </p>
+
+                <hr>
+
+                <h3>Example</h3>
+
+<pre>
+sealed class SecurityManager
+{
+}
+</pre>
+
+                <p>Wrong Example:</p>
+
+<pre>
+class AdminManager : SecurityManager
+{
+}
+</pre>
+
+                <hr>
+
+                <h3>Features</h3>
+
+                <ul>
+                    <li>Prevents inheritance.</li>
+                    <li>Provides better security.</li>
+                    <li>Can slightly improve performance.</li>
+                </ul>
+
+                <hr>
+
+                <h3>Real-world Usage</h3>
+
+                <ul>
+                    <li>Security-related classes</li>
+                    <li>Configuration classes</li>
+                    <li>Restricted framework classes</li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Partial Class -->
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingPartial">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePartial">
+                Partial Class in C#
+            </button>
+        </h2>
+
+        <div id="collapsePartial" class="accordion-collapse collapse" data-bs-parent="#typesOfClassesAccordion">
+            <div class="accordion-body">
+
+                <h3>Definition</h3>
+
+                <p>
+                    A partial class allows the definition of a class to be split across multiple files.
+                </p>
+
+                <hr>
+
+                <h3>Example</h3>
+
+                <p>File 1:</p>
+
+<pre>
+partial class Employee
+{
+    public void Show()
+    {
+        Console.WriteLine("Show Method");
+    }
+}
+</pre>
+
+                <p>File 2:</p>
+
+<pre>
+partial class Employee
+{
+    public void Display()
+    {
+        Console.WriteLine("Display Method");
+    }
+}
+</pre>
+
+                <hr>
+
+                <h3>Features</h3>
+
+                <ul>
+                    <li>Code can be split into multiple files.</li>
+                    <li>Improves maintainability.</li>
+                    <li>Multiple developers can work on same class.</li>
+                </ul>
+
+                <hr>
+
+                <h3>Real-world Usage</h3>
+
+                <ul>
+                    <li>Windows Forms</li>
+                    <li>Entity Framework</li>
+                    <li>ASP.NET generated files</li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+</div>
